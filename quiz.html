@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "utf-8" />
+	<meta name = "description" content = "Assignment Part 1"/>
+	<meta name = "keywords" content = "HTML, CSS, Topic, Quiz" />
+	<meta name = "author" content  = "Nelson, Minh, Joy and Tom" />
+	<title> Home Page </title>
+</head>
+<body>
+	<h1> Quiz Page </h1>
+	<header>
+		<nav>
+			<a href = "index.html"> Home </a>
+			<a href = "topic.html"> Topic </a>
+			<a href = "quiz.html"> Quiz </a>
+		</nav>
+	</header>
+	<form method = "post" action = "https://mercury.swin.edu.au/it000000/formtest.php">
+		<fieldset>
+			<legend> Please enter your full name and student ID </legend>
+			<label for = "fname">First:</label><br>
+			<input type = "text" id = "fname" name = "fname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"><br>
+			<label for = "lname">Last:</label><br>
+			<input type = "text" id = "lname" name = "lname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"><br>
+			<label for = "studentid">Student ID:</label><br>
+			<input type = "number" id = "studentid" name = "studentid" required = "required"><br> <!-- ask about validation: pattern and minlength not allowed... -->
+		</fieldset>
+		
+		<fieldset>
+		<legend> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
+		<label for = "q1">Q1: Text</label><br>
+		<input type = "text" id = "q1" name = "q1" required = "required"><br>
+		
+		<label for = "q2">Q2: Radio</label><br>
+		<input type = "radio" id = "q2a" name = "q2" required = "required">
+		<input type = "radio" id = "q2b" name = "q2" required = "required">
+		<input type = "radio" id = "q2c" name = "q2" required = "required"></br>
+		
+		<label for = "q3">Q3: Checkbox</label><br>
+		<input type = "checkbox" id = "q3" name = "q3">
+		<input type = "checkbox" id = "q3" name = "q3">
+		<input type = "checkbox" id = "q3" name = "q3"><br>
+		
+		<label for = "q4">Q4: Drop Down</label><br>
+		<select>
+			<option value = ""> Please Select </option>
+			<option value = ""> Option A </option>
+			<option value = ""> Option B </option>
+			<option value = ""> Option C </option>
+		</select></br>
+		
+		<label for = "q5"> Q5: Custom </label><br>
+		<input type = "number" id = "q5" name = "q5"><br>
+		</fieldset>
+		
+		
+		<input type = "submit" value = "Finish Quiz!">
+	</form>
+	<footer>
+		Contact Our Team Via E-Mail:
+		<a href = "mailto:nelsonhain@gmail.com"> Nelson </a>
+		<a href = "mailto:augiaminh14@gmail.com"> Minh </a>
+		<a href = "mailto:joycmena@gmail.com"> Joy </a>
+		<a href = "mailto:thinhd464@gmail.com"> Tom </a>
+	</footer>
+</body>
+</html>
