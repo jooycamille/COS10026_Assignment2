@@ -4,7 +4,8 @@
 	<meta charset = "utf-8" />
 	<meta name = "description" content = "Assignment Part 1"/>
 	<meta name = "keywords" content = "HTML, CSS, Topic, Quiz" />
-	<meta name = "author" content  = "Nelson, Minh, Joy and Tom" />
+	<meta name = "author" content  = "Nelson, Minh, Joy, Uzman and Tom" />
+	<link href = "style.css" rel = "stylesheet" />
 	<title> Home Page </title>
 </head>
 <body>
@@ -14,22 +15,23 @@
 			<a href = "index.html"> Home </a>
 			<a href = "topic.html"> Topic </a>
 			<a href = "quiz.html"> Quiz </a>
+			<a href = "enhancements.html"> Enhancement </a>
 		</nav>
 	</header>
 	<form method = "post" action = "https://mercury.swin.edu.au/it000000/formtest.php">
 		<fieldset>
 			<legend> Please enter your full name and student ID </legend>
-			<p><label for = "fname">First:</label></br>
+			<p><label for = "fname">First:</label>
 			<input type = "text" id = "fname" name = "fname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"></p>
-			<p><label for = "lname">Last:</label></br>
+			<p><label for = "lname">Last:</label>
 			<input type = "text" id = "lname" name = "lname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"></p>
-			<p><label for = "studentid">Student ID:</label></br>
+			<p><label for = "studentid">Student ID:</label>
 			<input type = "number" id = "studentid" name = "studentid" required = "required"></p> <!-- ask about validation: pattern and minlength not allowed... -->
 		</fieldset>
 		
 		<fieldset>
 		<legend> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
-		<p><label for = "q1"> What is another name for <strong>Voice Technology</strong>? </label></br>
+		<p><label for = "q1"> What is another name for <strong>Voice Technology</strong>? </label>
 		<input type = "text" id = "q1" name = "q1" required = "required"></p>
 		
 		<p> What was the Name Given to the First Software Program used in Voice Technology? <br>
@@ -42,18 +44,18 @@
 		<label for = "q2d"> Audrey </label>
 		<input type = "radio"  id = "q2d" name = "q2" value = "audrey" required = "required"/></p>
 		
-		<p> Which of the Following are Real-World Examples of Voice Technology. </br>
-		<label for = "q3"> Apple Siri </label>
-		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
-		<label for = "q3"> Amazon Alexa </label>
-		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
-		<label for = "q3"> Google Assistant </label>
-		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
-		<label for = "q3"> Dragon Professional </label>
-		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></p>
+		<p> Which of the Following are Real-World Examples of Voice Technology.
+		<label for = "applesiri"> Apple Siri </label>
+		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri">
+		<label for = "amazon"> Amazon Alexa </label>
+		<input type = "checkbox" id = "amazon" name = "examples[]" value = "amazon">
+		<label for = "google"> Google Assistant </label>
+		<input type = "checkbox" id = "google" name = "examples[]" value = "google">
+		<label for = "dragon"> Dragon Professional </label>
+		<input type = "checkbox" id = "dragon" name = "examples[]" value = "dragon"></p>
 		
 		<p><label for = "q4"> Which of these catagories is Voice Technology related to?  </label><br>
-		<select>
+			<select name="q4" id="q4">
 			<option value = ""> Please Select </option>
 			<option value = "civil"> Civil Engineering </option>
 			<option value = "bio"> Biometrics </option>
