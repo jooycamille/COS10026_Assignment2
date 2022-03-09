@@ -19,43 +19,52 @@
 	<form method = "post" action = "https://mercury.swin.edu.au/it000000/formtest.php">
 		<fieldset>
 			<legend> Please enter your full name and student ID </legend>
-			<label for = "fname">First:</label><br>
-			<input type = "text" id = "fname" name = "fname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"><br>
-			<label for = "lname">Last:</label><br>
-			<input type = "text" id = "lname" name = "lname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"><br>
-			<label for = "studentid">Student ID:</label><br>
-			<input type = "number" id = "studentid" name = "studentid" required = "required"><br> <!-- ask about validation: pattern and minlength not allowed... -->
+			<p><label for = "fname">First:</label></br>
+			<input type = "text" id = "fname" name = "fname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"></p>
+			<p><label for = "lname">Last:</label></br>
+			<input type = "text" id = "lname" name = "lname" maxlength = "30" pattern = "[A-Za-z-]{0,25}" required = "required"></p>
+			<p><label for = "studentid">Student ID:</label></br>
+			<input type = "number" id = "studentid" name = "studentid" required = "required"></p> <!-- ask about validation: pattern and minlength not allowed... -->
 		</fieldset>
 		
 		<fieldset>
 		<legend> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
-		<label for = "q1">Q1: Text</label><br>
-		<input type = "text" id = "q1" name = "q1" required = "required"><br>
+		<p><label for = "q1"> What is another name for <strong>Voice Technology</strong>? </label></br>
+		<input type = "text" id = "q1" name = "q1" required = "required"></p>
 		
-		<label for = "q2">Q2: Radio</label><br>
-		<input type = "radio" id = "q2a" name = "q2" required = "required">
-		<input type = "radio" id = "q2b" name = "q2" required = "required">
-		<input type = "radio" id = "q2c" name = "q2" required = "required"></br>
+		<p> What was the Name Given to the First Software Program used in Voice Technology? <br>
+		<label for = "q2a"> Alexa </label>
+		<input type = "radio" id = "q2a" name = "q2" value = "alexa" required = "required">
+		<label for = "q2b"> Siri </label>
+		<input type = "radio" id = "q2b" name = "q2" value = "siri" required = "required">
+		<label for = "q2c"> Cortana </label>
+		<input type = "radio" id = "q2c" name = "q2" value = "cortana" required = "required">
+		<label for = "q2d"> Audrey </label>
+		<input type = "radio"  id = "q2d" name = "q2" value = "audrey" required = "required"/></p>
 		
-		<label for = "q3">Q3: Checkbox</label><br>
-		<input type = "checkbox" id = "q3" name = "q3">
-		<input type = "checkbox" id = "q3" name = "q3">
-		<input type = "checkbox" id = "q3" name = "q3"><br>
+		<p> Which of the Following are Real-World Examples of Voice Technology. </br>
+		<label for = "q3"> Apple Siri </label>
+		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
+		<label for = "q3"> Amazon Alexa </label>
+		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
+		<label for = "q3"> Google Assistant </label>
+		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></br>
+		<label for = "q3"> Dragon Professional </label>
+		<input type = "checkbox" id = "applesiri" name = "examples[]" value = "applesiri"></p>
 		
-		<label for = "q4">Q4: Drop Down</label><br>
+		<p><label for = "q4"> Which of these catagories is Voice Technology related to?  </label><br>
 		<select>
 			<option value = ""> Please Select </option>
-			<option value = ""> Option A </option>
-			<option value = ""> Option B </option>
-			<option value = ""> Option C </option>
-		</select></br>
+			<option value = "civil"> Civil Engineering </option>
+			<option value = "bio"> Biometrics </option>
+			<option value = "politics"> Politics </option>
+		</select></p>
 		
-		<label for = "q5"> Q5: Custom </label><br>
-		<input type = "number" id = "q5" name = "q5"><br>
+		<p><label for = "q5"> Q5: Custom </label><br>
+		<input type = "number" id = "q5" name = "q5"></p>
 		</fieldset>
 		
-		
-		<input type = "submit" value = "Finish Quiz!">
+		<p><input type = "submit" value = "Finish Quiz!"></p>
 	</form>
 	<footer>
 		Contact Our Team Via E-Mail:
@@ -63,6 +72,7 @@
 		<a href = "mailto:augiaminh14@gmail.com"> Minh </a>
 		<a href = "mailto:joycmena@gmail.com"> Joy </a>
 		<a href = "mailto:thinhd464@gmail.com"> Tom </a>
+		<a href = "mailto:uzmanshafifassy@gmail.com"> Uzman </a>
 	</footer>
 </body>
 </html>
