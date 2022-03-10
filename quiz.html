@@ -9,15 +9,15 @@
 	<title> Voice Technology Quiz </title>
 </head>
 <body>
-	<h1> Quiz Page </h1>
-	<header>
-		<nav>
-			<a href = "index.html"> Home </a>
-			<a href = "topic.html"> Topic </a>
-			<a href = "quiz.html"> Quiz </a>
-			<a href = "enhancements.html"> Enhancement </a>
-		</nav>
-	</header>
+	<div class="header">
+		<h1> Quiz </h1>
+	</div>
+	<div class="topnav">
+		<a href = "index.html"> Home </a>
+		<a href = "topic.html"> Topic </a>
+		<a href = "quiz.html"> Quiz </a>
+		<a href = "enhancements.html"> Enhancement </a>
+	</div>
 	<form method = "post" action = "https://mercury.swin.edu.au/it000000/formtest.php">
 		<fieldset>
 			<legend> Please enter your full name and student ID </legend>
@@ -29,7 +29,7 @@
 			<input type = "text" id = "lname" name = "lname" maxlength = "30" pattern = "[A-Za-z-]{0,30}" required = "required"></p>
 
 			<p><label for = "studentid">Student ID:</label>
-			<input type = "text" id = "studentid" name = "studentid" required = "required" size="10" pattern=".{7,10}"></p> <!-- ask about validation: pattern and minlength not allowed... -->
+			<input type = "text" id = "studentid" name = "studentid" required = "required" size="10" pattern=".{7,10}"></p> 
 		</fieldset>
 		
 		<fieldset>
