@@ -24,7 +24,7 @@ header h1 {
     background-color: black;
 } */
 
-/* style the topnav links */
+/* style the nav links */
 nav a {
     float: center;
     color: black;
@@ -39,6 +39,15 @@ nav a:hover {
     background-color: black;
     color: white;
     border: 2px solid white;
+}
+
+/* style body content */
+.photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
 }
 
 /* footer */
