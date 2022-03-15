@@ -8,40 +8,41 @@ body {
 }
 
 /* header title */
-.header {
+header {
     padding: 30px;
     text-align: center;
     background: white;
 }
 
-.header h1 {
+header h1 {
     font-size: 50px;
 }
 
 /* style the top navigation bar */
-.topnav {
+/* nav {
     overflow: hidden;
     background-color: black;
-}
+} */
 
 /* style the topnav links */
-.topnav a {
-    float: left;
-    display: block;
-    color: white;
+nav a {
+    float: center;
+    color: black;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    /* margin: 20px 22px; */
+    text-decoration: underline;
 }
 
 /* change color on hover */
-.topnav a:hover {
-    background-color: grey;
-    color: black;
+nav a:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
 }
 
 /* footer */
-.footer {
+footer {
     padding: 20px;
     text-align: center;
     margin: 20px;
@@ -49,7 +50,7 @@ body {
 
 /* responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px){
-    .topnav a {
+    nav a {
         float: none;
         width: 100%;
     }
