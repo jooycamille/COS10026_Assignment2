@@ -26,6 +26,25 @@ header h1 {
     background-color: black;
 } */
 
+/*
+sticky code
+*/
+.sticky
+{
+    position : fixed;
+    top : 0;
+    width: 100%;
+}
+
+.photo
+{
+    top: 100px;
+}
+.sticky + .photo
+{
+    padding-top: 260px;
+}
+
 /* style the nav links */
 nav a {
     font-family: 'Smooch Sans', sans-serif;
