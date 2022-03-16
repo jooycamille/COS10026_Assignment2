@@ -52,11 +52,25 @@ nav a:hover {
     height: auto;
 }
 
+p
+{
+    line-height: 150%;
+    text-align: justify;
+}
+
 /* footer */
-footer {
+#thefooter{
     padding: 20px;
     text-align: center;
     margin: 20px;
+    font-style: italic;
+    word-spacing: 15px;
+}
+
+#thefooter a
+{
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
