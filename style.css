@@ -15,7 +15,10 @@ header {
     text-align: center;
     background: white;
 }
-
+nav a
+{
+    border-top: 4px solid #4c9777;
+}
 header h1 {
     font-size: 50px;
 }
