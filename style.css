@@ -15,9 +15,13 @@ header {
     text-align: center;
     background: white;
 }
+#Adding border to navigation sub-menu
 nav a
 {
     border-top: 4px solid #4c9777;
+    border-bottom: 4px solid #4c9777;
+    border-left:4px solid #4c9777;
+    border-right: 4px solid #4c9777;
 }
 header h1 {
     font-size: 50px;
