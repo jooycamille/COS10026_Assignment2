@@ -15,7 +15,7 @@ header {
     text-align: center;
     background: white;
 }
-#Adding border to navigation sub-menu
+/*Adding border to navigation sub-menu*/
 nav a
 {
     border-top: 4px solid #4c9777;
