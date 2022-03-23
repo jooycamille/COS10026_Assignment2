@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h1>Voice Technology</h1>
+		<h1 id="bigheader">Voice Technology</h1>
 		<nav>
 			<a href = "index.html"> Home </a>
 		<a href = "topic.html"> Topic </a>
@@ -20,8 +20,8 @@
 	</header>
 	<form method = "post" action = "https://mercury.swin.edu.au/it000000/formtest.php">
 		<fieldset>
-			<legend> Please enter your full name and student ID </legend>
-
+			<legend class="sections"> Please enter your full name and student ID </legend>
+			<div id="namesec">
 			<p><label for = "fname">First:</label>
 			<input type = "text" id = "fname" name = "fname" maxlength = "30" pattern = "^[a-zA-Z]+$" required = "required"></p>
 
@@ -31,38 +31,57 @@
 			<p><label for = "studentid">Student ID:</label>
 
 			<input type = "text" id = "studentid" name = "studentid" required = "required" size="10" pattern="\d{7,10}"></p> 
-
+			</div>
 			
 
 		</fieldset>
 		
 		<fieldset>
-			<legend> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
+			<legend class="sections"> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
 			
-			<p><label for = "q1"> 1. What is another name for <strong>Voice Technology</strong>? </label><br/>
+			<section class="quiz">
+			<p class="shortq"><label for = "q1"> 1. What is another name for <strong>Voice Technology</strong>? </label><br/>
 			<input type = "text" id = "q1" name = "q1" required = "required" pattern="^[a-zA-Z]+$" maxlength="30"></p>
+			</section>
 			
-			<p> 2. What was the name given to the <em>first software program</em> used in Voice Technology? </p>
-			<p><label for = "q2a"> Alexa </label>
-				<input type = "radio" id = "q2a" name = "q2" value = "alexa"</p>
-			<p><label for = "q2b"> Siri </label>
-				<input type = "radio" id = "q2b" name = "q2" value = "siri"</p>
-			<p><label for = "q2c"> Cortana </label>
-				<input type = "radio" id = "q2c" name = "q2" value = "cortana"</p>
-			<p><label for = "q2d"> Audrey </label>
-				<input type = "radio"  id = "q2d" name = "q2" value = "audrey" required = "required"/></p>
+			<section class="quiz">
+			<p class="mq"> 2. What was the name given to the <em>first software program</em> used in Voice Technology? </p>
+			<div class="disp">
+			<p><input type = "radio" id = "q2a" name = "q2" value = "alexa"
+				<label for = "q2a"> Alexa </label></p>
+			<p><input type = "radio" id = "q2b" name = "q2" value = "siri"
+				  <label for = "q2b"> Siri </label>
+				</p>
+			<p><input type = "radio" id = "q2c" name = "q2" value = "cortana"
+				  <label for = "q2c"> Cortana </label>
+				</p>
+			<p><input type = "radio"  id = "q2d" name = "q2" value = "audrey" required = "required"/>
+				<label for = "q2d"> Audrey </label>
+				</p>
+			</div>
+			</section>
 			
-			<p> 3. Which of the following are real-world examples of Voice Technology.</p>
-			<p><label for = "applesiri"> Apple Siri </label>
-				<input type = "checkbox" id = "applesiri" name = "q3" value = "applesiri"></p>
-			<p><label for = "amazon"> Amazon Alexa </label>
-				<input type = "checkbox" id = "amazon" name = "q3" value = "amazon"></p>
-			<p><label for = "google"> Google Assistant </label>
-				<input type = "checkbox" id = "google" name = "q3" value = "google"></p>
-			<p><label for = "dragon"> Dragon Professional </label>
-				<input type = "checkbox" id = "dragon" name = "q3" value = "dragon"></p>
+			<section class="quiz">
+			<p class="mq"> 3. Which of the following are real-world examples of Voice Technology.</p>
+			<div class="disp">
+			<p><input type = "checkbox" id = "applesiri" name = "q3" value = "applesiri">
+				<label for = "applesiri"> Apple Siri </label>
+				</p>
+			<p><input type = "checkbox" id = "amazon" name = "q3" value = "amazon">
+				<label for = "amazon"> Amazon Alexa </label>
+				</p>
+			<p><input type = "checkbox" id = "google" name = "q3" value = "google">
+				<label for = "google"> Google Assistant </label>
+				</p>
+			<p><input type = "checkbox" id = "dragon" name = "q3" value = "dragon">
+				<label for = "dragon"> Dragon Professional </label>
+				</p>
+			</div>
+			</section>
 			
-			<p><label for = "q4"> 4. Which of these catagories is Voice Technology related to?  </label>
+			<section class="quiz">
+			<p class="shortq"><label for = "q4"> 4. Which of these catagories is Voice Technology related to?  </label><br/>
+				
 				<select name="q4" id="q4" required="required">
 					<option value = ""> Please Select </option>
 					<option value = "civil"> Civil Engineering </option>
@@ -70,18 +89,28 @@
 					<option value = "politics"> Politics </option>
 				</select></p>
 			
-			<p> 5. What are some of the benefits of Web Voice Technology? </p>
-            		<p><label for = "disable"> Useful for those with disabilities </label>
-                		<input type = "checkbox" id = "disable" name = "q5" value = "disable"></p>
-            		<p><label for = "interconnectedness"> Can be connected among other devices for productivity </label>
-                		<input type = "checkbox" id = "interconnectedness" name = "q5" value = "interconnectedness"></p>
-           		 <p><label for = "convennient"> Is very convenient for certain tasks(writing,etc) </label>
-                		<input type = "checkbox" id = "convennient" name = "q5" value = "convenient"></p>
-            		<p><label for = "privacy"> Provides the best privacy, firewall that prevents malicious attack on files  </label>
-                		<input type = "checkbox" id = "privacy" name = "q5" value = "privacy"></p>
+			</section>
+			
+			<section class="quiz">
+			<div class="disp">
+			<p class="mq"> 5. What are some of the benefits of Web Voice Technology? </p>
+            		<p><input type = "checkbox" id = "disable" name = "q5" value = "disable">
+				<label for = "disable"> Useful for those with disabilities </label>
+                		</p>
+            		<p><input type = "checkbox" id = "interconnectedness" name = "q5" value = "interconnectedness">
+				<label for = "interconnectedness"> Can be connected among other devices for productivity </label>
+                		</p>
+           		 <p><input type = "checkbox" id = "convennient" name = "q5" value = "convenient">
+				 <label for = "convennient"> Is very convenient for certain tasks(writing,etc) </label>
+                		</p>
+            		<p><input type = "checkbox" id = "privacy" name = "q5" value = "privacy">
+				<label for = "privacy"> Provides the best privacy, firewall that prevents malicious attack on files  </label>
+                		</p>
+			</div>
+			</section>
 		</fieldset>
 		
-		<p><input type = "submit" value = "Finish Quiz!"></p>
+		<p id="finbutt"><input type = "submit" value = "Finish Quiz!"></p>
 	</form>
 	<footer>
 		Contact Our Team Via E-Mail:
