@@ -29,12 +29,12 @@ header h1 {
 
 /*Quiz CSS*/
 .bigsec {margin: 20px 5px;}
-.sections {font-weight: bold; font-size: 25px;}
-#namesec {column-count: 2;}
+.sections {font-weight: bold; font-size: 25px; text-align: center;}
+#namesec {column-count: 2; text-align: center;}
 .quiz {text-align: center; border: 2px solid black; box-shadow: 5px 5px; border-radius: 20px; margin: 50px 20px;}
 .shortq {text-align: center;}
 .mq {text-align: center;} 
-.disp {column-count: 2; text-align: left;}
+.disp {column-count: 2; text-align: center;}
 #finbutt {text-align: center; font-size:21px;}
 
 /* style the top navigation bar */
