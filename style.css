@@ -37,7 +37,7 @@ header h1 {
 .disp {column-count: 2; text-align: center;}
 #finbutt {text-align: center; font-size:21px;}
 #namesec {column-count: 2; text-align: center;}
-
+#q5 p {text-align: center;}
 /* style the top navigation bar */
 /* nav {
     overflow: hidden;
