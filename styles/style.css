@@ -1,0 +1,326 @@
+/*
+Assignment 1 : Group Project
+Team Members : Nelson, Joy, Tdang, Augi, Uzman
+*/
+
+/* Universal CSS*/
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(231,215,251);
+    background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+                                           /* Index HTML CSS*/
+/* Navbar CSS*/
+.navbar {
+    background: rgb(242, 250, 252);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+  
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  
+  #navbar__logo {
+    background-image: linear-gradient(to top, #8b05c0 0%, #ff99cc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  #navbar__logo img {
+    margin-right: 0.5rem;
+    width: 10%;
+  }
+  
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .navbar__item {
+    height: 80px;
+  }
+  
+  .navbar__links {
+    color: rgb(49, 49, 49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+  }
+
+  .navbar__links:hover {
+    color: #d878d0;
+    text-decoration: underline;
+    background: black;
+    margin: 0px 6px;
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 960px) {
+    .navbar__container {
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      z-index: 1;
+      width: 100%;
+      max-width: 1300px;
+      padding: 0;
+    }
+  
+    .navbar__menu {
+      display: grid;
+      grid-template-columns: auto;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: -1000px;
+      opacity: 1;
+      transition: all 0.5s ease;
+      height: 50vh;
+      z-index: -1;
+    }
+  
+    .navbar__menu.active {
+      background: #131313;
+      top: 100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 99;
+      height: 50vh;
+      font-size: 1.6rem;
+    }
+  
+    #navbar__logo {
+      padding-left: 25px;
+    }
+  
+    .navbar__toggle .bar {
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background: rgb(46, 46, 46);
+    }
+  
+    .navbar__item {
+      width: 100%;
+    }
+  
+    .navbar__links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    #mobile-menu {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      transform: translate(5%, 20%);
+    }
+  
+    .navbar__toggle .bar {
+      display: block;
+      cursor: pointer;
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+/* Index Image CSS */
+#index_img
+{
+    float: left;
+    width: 50%;
+    padding: 0 20px 0 0;
+}
+
+/* Index Content CSS */
+.container
+{
+    margin: 100px auto;
+    width: 80%;
+    padding: 8px;
+}
+
+.content
+{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 250%;
+}
+
+/* Footer CSS */
+ .mainfooter
+ {
+     position: sticky;
+     top: 100%;
+     height: 120px;
+     width: 100%;
+     background-color: rgb(32, 32, 32);
+ }
+ .f_container
+ {
+     padding: 20px;
+     text-align: center;
+     line-height: 40px;
+ }
+ 
+ .f_container h3
+ {
+     color: white;
+ }
+ .f_container li 
+ {
+     list-style-type: none;
+     display: inline;
+     word-spacing: 40px;
+ }
+ 
+ .f_container li a
+ {
+     text-decoration: none;
+     font-weight: 900;
+     color: rgb(136, 106, 150);
+     transition: 0.4s;
+ }
+ 
+ .f_container li a:hover
+ {
+     color: rgb(218, 20, 208);
+ }
+
+                                            /* Topic HTML CSS*/
+article
+{
+    padding: 80px;
+    line-height: 40px;
+    text-align: justify;
+}
+                                            /* Quiz HTML CSS*/
+.quiz_content
+{
+    padding: 80px;
+}
+
+.f_section
+{
+    font-size: 22px;
+    font-weight: 900;
+    padding: 10px;
+    text-align: center;
+}
+
+.quiz_content fieldset
+{
+    padding: 14px 16px;
+    line-height: 40px;
+    box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.2) ;
+    background-color: rgba(227, 190, 241, 0.2);
+}
+
+.quiz_content input[type=text]
+{
+    padding: 8px 12px;
+    margin: 8px 0px;
+    background-color: rgba(227, 190, 241, 0.1);
+    border: none;
+    border-bottom: 2px solid rgb(171, 38, 175);
+    transition: 0.3s;
+}
+
+#quiz_sec
+{
+    padding: 20px;
+    text-align: center;
+}
+
+#quiz_sec select
+{
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: none;
+    background-color: rgba(227, 190, 241, 0.1);
+    border-bottom: 2px solid rgb(171, 38, 175);
+    font-weight: 800;
+    text-align: center;
+    color: rgb(56, 56, 56);
+    letter-spacing: 4px;
+}
+
+.submitbtn
+{
+    text-align: center;
+}
+.submitbtn input
+{
+    padding: 16px 32px;
+    margin: 8px 2px;
+    background-color: rgb(186, 148, 196);
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submitbtn input:hover
+{
+    background-color: rgb(137, 38, 161);
+    box-shadow: 0 3px 3px 0 rgba(5, 5, 5, 0.6);
+}
+
+                                            /* Enhancement HTML CSS*/
