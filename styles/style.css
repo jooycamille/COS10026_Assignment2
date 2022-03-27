@@ -319,15 +319,27 @@ article
 }
 
 .submitbtn input:hover
-{
-    background-color: rgb(137, 38, 161);
-    box-shadow: 0 3px 3px 0 rgba(5, 5, 5, 0.6);
-}
 table,th,td{
     border: 3px solid;
+    text-align: center;
 }
 table{
-  table-layout:fixed;width:100%;
+  table-layout:fixed;width:50%;
+  margin-top: -447px;margin-left: 710px;
+  line-height: 2;
+  box-shadow: 0 0 40px;
+  border-collapse: separate;
+  border-radius: 7px;
+}
+th{
+  background-color: #009879;
+  color:#ffffff;
+}
+tr{
+  border-bottom: 10px solid #dddddd;
+}
+tbody {
+  background-color: #f3f3f3;
 }
 
                                             /* Enhancement HTML CSS*/
