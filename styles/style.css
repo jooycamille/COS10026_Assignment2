@@ -323,5 +323,11 @@ article
     background-color: rgb(137, 38, 161);
     box-shadow: 0 3px 3px 0 rgba(5, 5, 5, 0.6);
 }
+table,th,td{
+    border: 3px solid;
+}
+table{
+  table-layout:fixed;width:100%;
+}
 
                                             /* Enhancement HTML CSS*/
