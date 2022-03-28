@@ -309,10 +309,15 @@ article
 #q2 {word-spacing: 50px;}
 #q3d {columns: 2; text-align: center;}
 #q5d {columns: 2; text-align: center;}
-.q35 {
+.q5 {
 	display: flex; 
 	align-items: center; 
 	padding-left: 90px;
+	}
+.q3 {
+	display: flex; 
+	align-items: center; 
+	padding-left: 250px;
 	}
 
 
