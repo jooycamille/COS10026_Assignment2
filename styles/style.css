@@ -285,6 +285,10 @@ article
 {
     padding: 20px;
     text-align: center;
+    border: 2px solid black; 
+	box-shadow: 3px 3px; 
+	border-radius: 20px;
+	margin: 50px 20px;
 }
 
 #quiz_sec select
@@ -299,6 +303,12 @@ article
     color: rgb(56, 56, 56);
     letter-spacing: 4px;
 }
+
+/*Quiz CSS*/
+#idsec {columns: 2; text-align: center;}
+#q2 {word-spacing: 50px;}
+#q3d {columns: 2; text-align: center;}
+#q5d {columns: 2; text-align: justify;}
 
 
 .submitbtn
