@@ -308,7 +308,12 @@ article
 #idsec {columns: 2; text-align: center;}
 #q2 {word-spacing: 50px;}
 #q3d {columns: 2; text-align: center;}
-#q5d {columns: 2; text-align: justify;}
+#q5d {columns: 2; text-align: center;}
+.q35 {
+	display: flex; 
+	align-items: center; 
+	padding-left: 90px;
+	}
 
 
 .submitbtn
