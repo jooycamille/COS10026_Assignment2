@@ -281,7 +281,7 @@ article
     transition: 0.3s;
 }
 
-#quiz_sec
+.quiz_sec
 {
     padding: 20px;
     text-align: center;
@@ -291,7 +291,7 @@ article
 	margin: 50px 20px;
 }
 
-#quiz_sec select
+.quiz_sec select
 {
     padding: 8px 12px;
     margin: 8px 0;
