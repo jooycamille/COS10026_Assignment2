@@ -24,8 +24,9 @@ body
                                            /* Index HTML CSS*/
 /* Navbar CSS*/
 .navbar {
-    background: rgb(242, 250, 252);
+    background: rgb(208, 199, 218);
     height: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +34,7 @@ body
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
   }
   
   .navbar__container {
@@ -61,6 +62,7 @@ body
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+    font-weight: 600;
   }
   
   #navbar__logo img {
@@ -87,6 +89,7 @@ body
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    font-weight: 700;
   }
 
   .navbar__links:hover {
@@ -184,7 +187,9 @@ body
 {
     float: left;
     width: 50%;
-    padding: 0 20px 0 0;
+    margin-right: 40px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 4px rgba(0,0,0,0.33);
 }
 
 /* Index Content CSS */
@@ -199,7 +204,7 @@ body
 {
     font-size: 18px;
     text-align: justify;
-    line-height: 250%;
+    line-height: 220%;
 }
 
 /* Footer CSS */
