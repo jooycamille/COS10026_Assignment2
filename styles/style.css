@@ -323,6 +323,10 @@ table,th,td{
     border: 3px solid;
     text-align: center;
 }
+table,th,td{
+    border: 3px solid;
+    text-align: center;
+}
 table{
   table-layout:fixed;width:50%;
   margin-top: -447px;margin-left: 710px;
@@ -332,14 +336,15 @@ table{
   border-radius: 7px;
 }
 th{
-  background-color: #009879;
+  background-color: #21d190;
   color:#ffffff;
 }
 tr{
   border-bottom: 10px solid #dddddd;
 }
 tbody {
-  background-color: #f3f3f3;
+  background:linear-gradient(#21d190,#d65bca);
+  font-weight: bold;
 }
 
                                             /* Enhancement HTML CSS*/
