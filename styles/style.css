@@ -319,7 +319,7 @@ article
 	align-items: center; 
 	padding-left: 90px;
 	}
-.q3 {
+.q3, .q2 {
 	display: flex; 
 	align-items: center; 
 	padding-left: 250px;
