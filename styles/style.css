@@ -255,8 +255,9 @@ article
     text-align: justify;
 }
 
-article h1 {
-  font-family: 'Times New Roman', Times, serif;
+article h1 
+{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 35px;
   padding: 15px;
 }
@@ -292,43 +293,72 @@ aside
   float: center;
 }
 
+/* table */
+    table,th,td{
+      border: 3px solid;
+      text-align: center;
+    }
+    table,th,td{
+      border: 3px solid;
+      text-align: center;
+    }
+    table{
+    table-layout:fixed;width:50%;
+    margin-top: -447px;margin-left: 710px;
+    line-height: 2;
+    box-shadow: 0 0 20px;
+    border-collapse: separate;
+    border-radius: 7px;
+    }
+    th{
+    background-color: #21d190;
+    color:#ffffff;
+    }
+    tr{
+    border-bottom: 10px solid #dddddd;
+    }
+    tbody {
+    background:linear-gradient(#21d190,#d65bca);
+    font-weight: bold;
+    }
+
                                             /* Quiz HTML CSS*/
 .quiz_content
 {
-    padding: 80px;
+  padding: 80px;
 }
 
 .f_section
 {
-    font-size: 22px;
-    font-weight: 900;
-    padding: 10px;
-    text-align: center;
+  font-size: 22px;
+  font-weight: 900;
+  padding: 10px;
+  text-align: center;
 }
 
 .quiz_content fieldset
 {
-    padding: 14px 16px;
-    line-height: 40px;
-    box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.2) ;
-    background-color: rgba(227, 190, 241, 0.2);
+  padding: 14px 16px;
+  line-height: 40px;
+  box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.2) ;
+  background-color: rgba(227, 190, 241, 0.2);
 }
 
 .quiz_content input[type=text]
 {
-    padding: 8px 12px;
-    margin: 8px 0px;
-    background-color: rgba(227, 190, 241, 0.1);
-    border: none;
-    border-bottom: 2px solid rgb(171, 38, 175);
-    transition: 0.3s;
+  padding: 8px 12px;
+  margin: 8px 0px;
+  background-color: rgba(227, 190, 241, 0.1);
+  border: none;
+  border-bottom: 2px solid rgb(171, 38, 175);
+  transition: 0.3s;
 }
 
 .quiz_sec
 {
-    padding: 20px;
-    text-align: center;
-    border: 2px solid black; 
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black; 
 	box-shadow: 3px 3px; 
 	border-radius: 20px;
 	margin: 50px 20px;
@@ -336,15 +366,15 @@ aside
 
 .quiz_sec select
 {
-    padding: 8px 12px;
-    margin: 8px 0;
-    border: none;
-    background-color: rgba(227, 190, 241, 0.1);
-    border-bottom: 2px solid rgb(171, 38, 175);
-    font-weight: 800;
-    text-align: center;
-    color: rgb(56, 56, 56);
-    letter-spacing: 4px;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: none;
+  background-color: rgba(227, 190, 241, 0.1);
+  border-bottom: 2px solid rgb(171, 38, 175);
+  font-weight: 800;
+  text-align: center;
+  color: rgb(56, 56, 56);
+  letter-spacing: 4px;
 }
 
 /*Quiz CSS*/
@@ -363,51 +393,30 @@ aside
 	padding-left: 250px;
 	}
 
-
 .submitbtn
 {
     text-align: center;
 }
 .submitbtn input
 {
-    padding: 16px 32px;
-    margin: 8px 2px;
-    background-color: rgb(186, 148, 196);
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s;
+  padding: 16px 32px;
+  margin: 8px 2px;
+  background-color: rgb(186, 148, 196);
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 20px;
 }
 
 .submitbtn input:hover
-table,th,td{
-    border: 3px solid;
-    text-align: center;
-}
-table,th,td{
-    border: 3px solid;
-    text-align: center;
-}
-table{
-  table-layout:fixed;width:50%;
-  margin-top: -447px;margin-left: 710px;
-  line-height: 2;
-  box-shadow: 0 0 20px;
-  border-collapse: separate;
-  border-radius: 7px;
-}
-th{
-  background-color: #21d190;
-  color:#ffffff;
-}
-tr{
-  border-bottom: 10px solid #dddddd;
-}
-tbody {
-  background:linear-gradient(#21d190,#d65bca);
-  font-weight: bold;
+{
+  border: rgb(186, 148, 196);
+  background-color: rgb(62, 45, 66);
+  color: whitesmoke;
+  border-radius: 20px;
 }
 
                                             /* Enhancement HTML CSS*/
