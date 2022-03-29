@@ -21,6 +21,13 @@ body
     background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
 }
 
+.topic_body
+{
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
                                            /* Index HTML CSS*/
 /* Navbar CSS*/
 .navbar {
@@ -253,6 +260,11 @@ article
     padding: 80px;
     line-height: 40px;
     text-align: justify;
+}
+
+section
+{
+  scroll-snap-align: center;
 }
 
 article h1 
