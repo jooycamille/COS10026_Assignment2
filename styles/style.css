@@ -254,6 +254,30 @@ article
     line-height: 40px;
     text-align: justify;
 }
+
+#sidenav a 
+{
+  position: fixed;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 10px;
+  color: black;
+  border-radius: 0 5px 5px 0;
+}
+
+#sidenav a:hover
+{
+  left: 0;
+}
+
+#p {top: 150px; background-color: rgb(122, 122, 139);}
+#d {top: 250px; background-color: rgb(122, 122, 139);}
+#m {top: 350px; background-color: rgb(122, 122, 139);}
+#g {top: 450px; background-color: rgb(122, 122, 139);}
+#r {top: 550px; background-color: rgb(122, 122, 139);}
                                             /* Quiz HTML CSS*/
 .quiz_content
 {
