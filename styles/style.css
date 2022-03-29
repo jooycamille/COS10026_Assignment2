@@ -255,6 +255,12 @@ article
     text-align: justify;
 }
 
+article h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+  padding: 15px;
+}
+
 #sidenav a 
 {
   position: fixed;
@@ -278,6 +284,14 @@ article
 #m {top: 350px; background-color: rgb(122, 122, 139);}
 #g {top: 450px; background-color: rgb(122, 122, 139);}
 #r {top: 550px; background-color: rgb(122, 122, 139);}
+
+aside
+{
+  padding: 15px;
+  margin: 15px;
+  float: center;
+}
+
                                             /* Quiz HTML CSS*/
 .quiz_content
 {
