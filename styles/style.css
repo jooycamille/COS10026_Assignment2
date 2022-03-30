@@ -7,7 +7,7 @@ Team Members : Nelson, Joy, Tdang, Augi, Uzman
 
 *
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,13 +19,6 @@ body
     width: 100%;
     background: rgb(231,215,251);
     background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
-}
-
-.topic_body
-{
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
 
                                            /* Index HTML CSS*/
@@ -255,23 +248,20 @@ body
  }
 
                                             /* Topic HTML CSS*/
-article
+.content_topic
 {
-    padding: 80px;
+    padding: 40px;
     line-height: 40px;
     text-align: justify;
+    width: 100%;
+    height: 100%;
 }
 
-section
-{
-  scroll-snap-align: center;
-}
-
-article h1 
+.content_topic h1 
 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 35px;
-  padding: 15px;
+  padding: 20px;
 }
 
 #sidenav a 
@@ -332,6 +322,11 @@ aside
     tbody {
     background:linear-gradient(#21d190,#d65bca);
     font-weight: bold;
+    }
+
+    #purpose, #development, #management, #growth, #related
+    {
+        padding-top: 80px;
     }
 
                                             /* Quiz HTML CSS*/
