@@ -20,7 +20,7 @@ body
     background: rgb(231,215,251);
     background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
 }
-
+.filler_2 {visibility: hidden;}
                                            /* Index HTML CSS*/
 /* Navbar CSS*/
 .navbar {
