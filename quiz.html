@@ -16,9 +16,11 @@
         <!-- Navigation Section -->
         <nav class="navbar">
             <section class="navbar__container">
-              <a href="index.html" id="navbar__logo">Voice Technology</a>
+               <h2 class="filler_1">1</h2>
+		<a href="index.html" id="navbar__logo">Voice Technology</a>
               <section class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span> <span class="bar"></span>
+                 <h2 class="filler_1">1</h2>
+		<span class="bar"></span> <span class="bar"></span>
                 <span class="bar"></span>
               </section>
               <ul class="navbar__menu">
@@ -40,11 +42,13 @@
         
         <!-- Content Section s-->
         <section class="quiz_content">
-            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+             <h2 class="filler_1">1</h2>
+		<form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
                 <fieldset>
                     <legend class="f_section"> Registration </legend>
                     <section id="idsec">
-                        <p>
+                        <h2>Please enter the details below</h2>
+			<p>
                             <input type = "text" id = "studentid" name = "studentid" placeholder=" Enter 10 Digit Student ID" required = "required" size="20" pattern="\d{7,10}">
                         </p> 
     
@@ -63,16 +67,18 @@
                     <legend class="f_section"> Read through our topic page if you haven't already, then answer the following questions. Good Luck! </legend>
 
                     <section class="quiz_sec">
-                        <p>
-                            <label for = "q1"> 1. What is another name for <strong>Voice Technology</strong>? </label>
+                       <h3 class="filler">Question 1: </h3>
+			<p>
+                            <label for = "q1">What is another name for <strong>Voice Technology</strong>? </label>
                             <br/>
                             <input type = "text" id = "q1" name = "q1" placeholder="Enter a Voice Technology" required = "required" pattern="^[a-zA-Z]+$" maxlength="30">
                         </p>
                     </section>
 
                     <section class="quiz_sec">
-                        <p>
-                            2. What was the name given to the <em>first software program</em> used in Voice Technology?
+                        <h3 class="filler">Question 2: </h3>
+			<p>
+                            What was the name given to the <em>first software program</em> used in Voice Technology?
                         </p>
 
                         <p id="q2">
@@ -92,31 +98,24 @@
                     </section>
 
                     <section class="quiz_sec">
-                        <p> 
+                        <h3 class="filler">Question 3: </h3>
+			<p> 
                             3. Which of the following are real-world examples of Voice Technology.
                         </p>
-			          <section id="q3d">  
-			           <p>
+			           
+			         <p id="q3d">
 					
-				        <label class="q3" for = "applesiri"><input type = "checkbox" id = "applesiri" name = "q3" value = "applesiri"> Apple Siri </label>
-				        </p> 
-					  <p>
-			            
-				        <label class="q3" for = "amazon"><input type = "checkbox" id = "amazon" name = "q3" value = "amazon"> Amazon Alexa </label>
-				       </p> 
-					  <p>
-			            
-				        <label class="q3" for = "google"><input type = "checkbox" id = "google" name = "q3" value = "google"> Google Assistant </label>
-				        </p>
-			           <p>
-					  
-				        <label class="q3" for = "dragon"><input type = "checkbox" id = "dragon" name = "q3" value = "dragon"> Dragon Professional </label>
-					  </p>
-			    </section>    
+				      <label class="q3" for = "applesiri"><input type = "checkbox" id = "applesiri" name = "q3" value = "applesiri"> Apple Siri </label>
+				      <label class="q3" for = "amazon"><input type = "checkbox" id = "amazon" name = "q3" value = "amazon"> Amazon Alexa </label>
+				      <label class="q3" for = "google"><input type = "checkbox" id = "google" name = "q3" value = "google"> Google Assistant </label>
+				      <label class="q3" for = "dragon"><input type = "checkbox" id = "dragon" name = "q3" value = "dragon"> Dragon Professional </label>
+				</p>
+			       
                     </section>
 
                     <section class="quiz_sec">
-                        <p>
+                        <h3 class="filler">Question 4: </h3>
+			 <p>
                             <label for = "q4">4. Which of these catagories is Voice Technology related to?</label>
                             <br/>
                             <select name="q4" id="q4" required="required">
@@ -129,22 +128,23 @@
                     </section>
 
                     <section class="quiz_sec">
-                        <p>
-                            5. What are some of the benefits of Web Voice Technology?
-                        </p>
-                       <section id="q5d">
-			    <p>
-			       
+                        <h3 class="filler">Question 5: </h3>
+			
+                            What are some of the benefits of Web Voice Technology?
+                       
+                      
+			   <p>
+				   <label class="q5d" for="q5d"> What are some of the benefits of Web Voice Technology?</label>     
                          <textarea placeholder="Please answer here" rows="6" cols = "50"></textarea>
-			       </p>		    
+			   </p>		    
                         
-			    </section>
-					  </section>
+			</section>
+					  
                 </fieldset>
 
-                <section class="submitbtn">
+                <p class="submitbtn">
                     <input type="submit" value="Finish Quiz">
-                </section>
+		</p>
 
             </form>
         </section>
