@@ -387,9 +387,9 @@ aside
 /*Quiz CSS*/
 #idsec {text-align: center;}
 #q2 {word-spacing: 50px;}
-.q3d {columns: 2; text-align: center;}
+#q3d {columns: 2; text-align: center;}
 #q5d {text-align: center;}
-.q5d {text-align: center;}
+.q5 {text-align: center;}
 .filler_1 {visibility: hidden;}
 .filler {text-align: center;}
 .q3, .q2 {
