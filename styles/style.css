@@ -20,7 +20,7 @@ body
     background: rgb(231,215,251);
     background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
 }
-.filler_2 {visibility: hidden;}
+
                                            /* Index HTML CSS*/
 /* Navbar CSS*/
 .navbar {
@@ -270,11 +270,13 @@ body
   left: -80px;
   transition: 0.3s;
   padding: 15px;
+  margin-right: 20px;
   width: 100px;
   text-decoration: none;
   font-size: 11px;
   color: black;
   border-radius: 0 5px 5px 0;
+  text-align: left;
 }
 
 #sidenav a:hover
@@ -386,12 +388,14 @@ aside
 
 /*Quiz CSS*/
 #idsec {text-align: center;}
-#q2 {columns: 2; text-align: center;}
+#q2 {word-spacing: 50px;}
 #q3d {columns: 2; text-align: center;}
 #q5d {text-align: center;}
-.q5 {text-align: center;}
-.filler_1 {visibility: hidden;}
-.filler {text-align: center;}
+.q5 {
+	display: flex; 
+	align-items: center; 
+	padding-left: 90px;
+	}
 .q3, .q2 {
 	display: flex; 
 	align-items: center; 
