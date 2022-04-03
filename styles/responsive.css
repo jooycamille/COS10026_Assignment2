@@ -1,0 +1,65 @@
+/* responsive.css */
+@media screen and (max-width:1000px) {
+      /* ########## Default ########## */
+      body {
+            margin-top: 150px;
+      }
+      /* ########## Navigation Bar ########## */
+      .header {
+            padding: 0;
+            margin: 0;
+      }
+
+      .header a {
+            text-align: center;
+            line-height: 1;
+      }
+
+      .header-right {
+            display: flex;
+      }     
+      
+      /* ########## Index Html ########## */
+      #index_body {
+            width: 100%;
+      }
+      
+      #index_img {
+            width: 100%;
+      }
+
+      /* ########## Topic Html ########## */
+      }
+      
+      #growth figure {
+            float: none;
+      }
+      
+      #r_img {
+            width: 60%;
+      }
+
+@media screen and (max-width:600px) {
+      /* ########## Topic Html ########## */
+      .topic_body {
+            margin-bottom: 80px;
+      }
+      
+      aside {
+            width: 100%;
+            float: none;
+      }
+
+      table {
+            width: 100%;
+            margin: 40px auto 0 auto;
+      }
+
+      #g_img {
+            width: 100%;
+      }
+
+      #r_img {
+            width: 100%;
+      }
+}

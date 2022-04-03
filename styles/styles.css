@@ -1,0 +1,459 @@
+/* ########## Default ########## */
+* {
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      /* makes sure that the padding and border are included in the total width and height of the elements */
+}
+
+header, footer {
+      display: block;
+}
+
+body {
+      display: block;
+      line-height: 1;
+      margin: 0;
+      min-height: 16px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+}
+
+h1 {
+      font-family: 'Exo', sans-serif;
+      font-size: 50px;
+      text-align: center;
+      line-height: 1;
+      text-transform: uppercase;
+}
+
+h2 {
+      font-family: 'Exo', sans-serif;
+      font-size: 35px;
+      text-align: center;
+      line-height: 1;
+      text-transform: uppercase;
+}
+
+h3 {
+      font-family: 'Exo', sans-serif;
+      font-size: 25px;
+      text-transform: uppercase;
+      line-height: 1;
+}
+
+h4 {
+      font-family: 'Exo', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 1;
+}
+
+section{
+      width: 100%;
+}
+
+aside {
+      width: 30%; 
+      float: right;
+      border: 2px groove #421f3f;
+      margin: 1em;
+      padding: 1em;
+      box-shadow: 10px 10px 5px #aaaaaa;
+      border-radius: 20px;
+      overflow: auto;
+      /* allows the content of aside to not overflow and to add scrollbars when necessary */
+}
+
+figure {
+      text-align: center;
+      font-style: italic;
+      margin: 0.5em;
+      padding: 0.5em;
+      display: table;
+}
+
+figcaption {
+      display: table-caption;
+      caption-side: bottom;
+}
+
+/* figcaption {
+      text-align: center;
+      font-style: italic;
+} */
+
+/* ########## Navigation Bar ########## */
+.header {
+      overflow: hidden;
+      background-color: rgb(208, 199, 218);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding-right: 50px;
+      padding-left: 50px;
+      margin-right: auto;
+      margin-left: auto;
+}
+
+.header a {
+      float: left;
+      display: block;
+      color: rgb(49, 49, 49);
+      text-align: center;
+      padding: 22px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+      align-items: center;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+}
+
+.header a.logo {
+      font-family: 'Sigmar One', cursive, Georgia, 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+      background: -webkit-linear-gradient(#8b05c0, #ff99cc);
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      /* change the text color to linear gradient */
+      cursor: pointer;
+      /* change cursor to pointer when hovered */
+}
+
+.header-right a:hover {
+      color: #d878d0;
+      text-decoration: underline;
+      background: black;
+      margin: 0px 6px;
+      transition: all 0.3s ease; 
+}
+
+.header a:active {
+      color: #000000;
+      text-decoration: underline;
+      background: rgb(255, 255, 255);
+      margin: 0px 6px;
+      transition: all 0.3s ease; 
+}
+.header-right {
+      float: right;
+}
+
+/* ########## Footer ########## */                                                                  
+footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(32, 32, 32);
+      text-align: center;  
+}
+footer article {
+      text-align: center;
+      line-height: 20px;
+}
+
+#footer_h3 {
+      color: white;
+      font-style: italic;
+}
+
+#contacts li {
+      list-style-type: none;
+      display: inline;
+      word-spacing: 40px;   
+      font-style: italic;   
+}
+
+#contacts li a {
+      text-decoration: none;
+      font-weight: 900;
+      color: rgb(136, 106, 150);
+      transition: 0.4s;      
+}
+
+#contacts li a:hover {
+      color: rgb(218, 20, 208);      
+}
+
+#email_icon {
+      color: #df8eff;
+      padding: 20px;
+}
+/* ########## Index.html CSS ########## */
+#index_body {
+      width: 100%;
+      background-image: url(/styles/images/background_photo1.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+}
+
+.index_container{
+      margin: 200px 100px;
+      width: 85%;
+      padding: 1.5em;
+      font-size: 20px;
+      min-height: 20px;
+      /* as the browser shrinks, it makes sure that the min-height of this text is 20px */
+      line-height: 220%;
+      background-color: rgba(202, 188, 216, 0.5);
+      border-radius: 20px;
+}
+
+.index_container h1 {
+      background-color: rgb(198, 162, 231, 0.7);
+      color: #341142;
+      border-radius: 20px;
+}
+
+#index_fig {
+      display: inline-block;
+      text-align: justify;
+}
+
+#index_img {
+      margin-right: 20px;
+      border-radius: 20px;
+      box-shadow: 6px 6px 4px rgba(0,0,0,0.33);
+      float: left;
+}
+
+/* ########## Topic.html CSS ########## */     
+
+/* side navigator */
+#sidenav a {
+      position: fixed;
+      left: -220px;
+      transition: 0.3s;
+      padding: 20px 40px 20px;
+      width: 260px;
+      text-decoration: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: black;
+      border-radius: 0 20px 20px 0;
+      margin: 0;
+}
+
+#sidenav a:hover {
+      left: 0;
+      background-color: #000000;
+      color: #e6d1ee;
+}
+
+#p {top: 150px; background-color: rgb(122, 122, 139);}
+#d {top: 210px; background-color: rgb(122, 122, 139);}
+#m {top: 270px; background-color: rgb(122, 122, 139);}
+#g {top: 330px; background-color: rgb(122, 122, 139);}
+#r {top: 390px; background-color: rgb(122, 122, 139);}
+#c {top: 450px; background-color: rgb(122, 122, 139);}
+
+/* Content */
+.topic_content {
+      padding: 60px;
+      line-height: 2;
+}
+
+#purpose, #development, #management, #growth, #related, #references{
+      padding-top: 50px;
+      /* to allow the <h2> for topics to show up when the side nav is clicked */
+}
+
+#purpose p {
+      padding: 20px;
+      text-align: justify;
+}
+
+/* table */
+table,th,td {
+      border: 3px solid rgb(83, 71, 121);
+      text-align: center;
+}
+    
+table {
+      width: 50%;
+      line-height: 1.5;
+      box-shadow: 0 0 20px;
+      border-collapse: separate;
+      border-radius: 7px;
+      border-style: groove;
+      margin: 5px 20px;
+}
+    
+th {
+      background-color: #421f3f;
+      color: white;
+
+}
+    
+tr {
+      border-bottom: 3px groove #000000;
+}
+    
+tbody {
+      background:linear-gradient(#c9c1f2,#e3b9de);
+      font-weight: bold;
+}
+
+#development p {
+      text-align: justify;
+}
+
+#d_img {
+      width: 100%;
+}
+
+dl > dt {
+      font-weight: bold;
+}
+
+#growth figure {
+      float: left;
+}
+
+#g_img {
+      width: 50%;
+      transition: transform .2s;
+}
+
+#g_img:hover {
+      transform: scale(1.5);
+      /* zoom in when hovered */
+}
+
+#growth p {
+      text-align: justify;
+}
+
+#related p {
+      text-align: justify;
+}
+
+#r_img {
+      width: 40%;
+      height: auto;
+}
+/* ########## Quiz.html CSS ########## */
+.quiz_content {
+      padding: 80px;
+      align-items: center;
+}
+
+form {
+      padding: 14px 16px;
+      line-height: 40px;
+}
+
+fieldset {
+      line-height: 40px;
+      box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.2) ;
+      background-color: rgba(227, 190, 241, 0.2);
+      text-align: center;
+      border-radius: 20px;
+}
+
+.quiz_content input[type=text] {
+      padding: 8px 12px;
+      margin: 8px 0px;
+      background-color: rgba(227, 190, 241, 0.1);
+      border: none;
+      border-bottom: 2px solid rgb(171, 38, 175);
+      transition: 0.3s;
+}
+
+.quiz_content input[type=text]:focus {
+      background-color: rgba(27, 4, 35, 0.1);
+}
+
+.f_section {
+      font-size: 22px;
+      font-weight: 900;
+      padding: 10px;
+      text-align: center;
+}
+
+/* User form */
+#idsec {
+      text-align: center;
+}
+
+#idsec p {
+      font-weight: bold;
+      font-style: italic;
+}
+
+/* Questions */
+.quest_1, .quest_2, .quest_3, .quest_4, .quest_5 {
+      padding: 20px;
+      text-align: center;
+      border: 2px solid black; 
+	box-shadow: 3px 3px; 
+	border-radius: 20px;
+	margin: 50px 20px;
+}
+
+.q2, .q3 {
+      padding: 0vw 5vw;
+      text-align: center;
+      display: block;
+}
+
+
+#q4 {
+      padding: 8px 12px;
+      margin: 8px 0;
+      border: none;
+      background-color: rgba(227, 190, 241, 0.1);
+      border-bottom: 2px solid rgb(171, 38, 175);
+      font-weight: 800;
+      text-align: center;
+      color: rgb(56, 56, 56);
+      letter-spacing: 4px;
+}
+
+textarea {
+      padding: 8px 12px;
+      margin: 8px 0px;
+      background-color: rgba(227, 190, 241, 0.1);
+      border: none;
+      border-bottom: 2px solid rgb(171, 38, 175);
+      border-radius: 20px;
+      transition: 0.3s;
+}
+
+textarea:focus {
+      background-color: rgba(27, 4, 35, 0.1);
+      border-radius: 20px;
+}
+
+/* Submit Button */
+.submitbtn {
+    text-align: center;
+}
+
+.submitbtn input {
+      padding: 16px 32px;
+      margin: 8px 2px;
+      background-color: rgb(186, 148, 196);
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 20px;
+}
+
+.submitbtn input:hover {
+      border: rgb(186, 148, 196);
+      background-color: rgb(62, 45, 66);
+      color: whitesmoke;
+      border-radius: 20px;
+      /* change background color, font color when hovered */
+}
