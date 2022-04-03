@@ -286,8 +286,12 @@ footer article {
       line-height: 2;
 }
 
+.topic_content h1 {
+      margin: 40px auto 0 auto;
+}
+
 #purpose, #development, #management, #growth, #related, #references{
-      padding-top: 50px;
+      padding-top: 90px;
       /* to allow the <h2> for topics to show up when the side nav is clicked */
 }
 
