@@ -1,9 +1,18 @@
-/* ########## Default ########## */
+/*
+Assignment 1 : Group Project
+Team Members : Nelson, Joy, Tdang, Augi, Uzman
+*/
+
+/* ########## Universal CSS ########## */
 * {
       font-family: 'Roboto', sans-serif;
       box-sizing: border-box;
       /* makes sure that the padding and border are included in the total width and height of the elements */
 }
+
+/* html {
+      
+} */
 
 header, footer {
       display: block;
@@ -13,9 +22,12 @@ body {
       display: block;
       line-height: 1;
       margin: 0;
-      min-height: 16px;
+      min-height: 100vh;
       margin-top: 40px;
       margin-bottom: 40px;
+      width: 100%;
+      background: rgb(231,215,251);
+      background: linear-gradient(0deg, rgba(231,215,251,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 h1 {
@@ -77,15 +89,10 @@ figcaption {
       caption-side: bottom;
 }
 
-/* figcaption {
-      text-align: center;
-      font-style: italic;
-} */
-
-/* ########## Navigation Bar ########## */
-.header {
+/* ########## Navbar CSS ########## */
+.navbar {
       overflow: hidden;
-      background-color: rgb(208, 199, 218);
+      background: rgb(208, 199, 218);
       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
       position: fixed;
       top: 0;
@@ -94,9 +101,10 @@ figcaption {
       padding-left: 50px;
       margin-right: auto;
       margin-left: auto;
+      z-index: 999;
 }
 
-.header a {
+.navbar a {
       float: left;
       display: block;
       color: rgb(49, 49, 49);
@@ -112,39 +120,57 @@ figcaption {
       font-size: 1.5rem;
 }
 
-.header a.logo {
+
+
+#navbar__logo {
       font-family: 'Sigmar One', cursive, Georgia, 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
-      background: -webkit-linear-gradient(#8b05c0, #ff99cc);
+      background-image: linear-gradient(to top, #8b05c0 0%, #ff99cc 100%);
+      background-size: 100%;
       -webkit-background-clip: text;
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
-      /* change the text color to linear gradient */
       cursor: pointer;
-      /* change cursor to pointer when hovered */
+      font-size: 2rem;
+      padding-top: 40px;
 }
 
-.header-right a:hover {
+#navbar__logo img {
+      margin-right: 0.5rem;
+      width: 10%;
+}
+  
+ul.navbar__menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      text-align: center;
+      float: right;
+}
+
+.navbar__item {
+      height: 80px;
+}
+  
+.navbar__links {
+      color: rgb(49, 49, 49);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      height: 100%;
+      font-weight: 700;
+}
+
+.navbar__links:hover {
       color: #d878d0;
       text-decoration: underline;
       background: black;
       margin: 0px 6px;
-      transition: all 0.3s ease; 
+      transition: all 0.3s ease;
 }
-
-.header a:active {
-      color: #000000;
-      text-decoration: underline;
-      background: rgb(255, 255, 255);
-      margin: 0px 6px;
-      transition: all 0.3s ease; 
-}
-.header-right {
-      float: right;
-}
-
-/* ########## Footer ########## */                                                                  
+/* ########## Footer CSS ########## */
 footer {
       position: fixed;
       left: 0;
@@ -184,8 +210,9 @@ footer article {
 #email_icon {
       color: #df8eff;
       padding: 20px;
-}
-/* ########## Index.html CSS ########## */
+} 
+
+/* ########## Index Html ########## */
 #index_body {
       width: 100%;
       background-image: url(/styles/images/background_photo1.jpg);
@@ -224,8 +251,7 @@ footer article {
       float: left;
 }
 
-/* ########## Topic.html CSS ########## */     
-
+/* ########## Topic HTML CSS ########## */
 /* side navigator */
 #sidenav a {
       position: fixed;
@@ -339,17 +365,17 @@ dl > dt {
       width: 40%;
       height: auto;
 }
-/* ########## Quiz.html CSS ########## */
+/* ########## Quiz HTML CSS ########## */
 .quiz_content {
       padding: 80px;
       align-items: center;
 }
-
+                                          
 form {
       padding: 14px 16px;
       line-height: 40px;
 }
-
+                                          
 fieldset {
       line-height: 40px;
       box-shadow: 0px 6px 9px 0px rgba(0,0,0,0.2) ;
@@ -357,7 +383,7 @@ fieldset {
       text-align: center;
       border-radius: 20px;
 }
-
+                                          
 .quiz_content input[type=text] {
       padding: 8px 12px;
       margin: 8px 0px;
@@ -366,45 +392,45 @@ fieldset {
       border-bottom: 2px solid rgb(171, 38, 175);
       transition: 0.3s;
 }
-
+                                          
 .quiz_content input[type=text]:focus {
       background-color: rgba(27, 4, 35, 0.1);
 }
-
+                                          
 .f_section {
       font-size: 22px;
       font-weight: 900;
       padding: 10px;
       text-align: center;
 }
-
+                                          
 /* User form */
 #idsec {
       text-align: center;
 }
-
+                                          
 #idsec p {
       font-weight: bold;
       font-style: italic;
 }
-
+                                          
 /* Questions */
 .quest_1, .quest_2, .quest_3, .quest_4, .quest_5 {
       padding: 20px;
       text-align: center;
       border: 2px solid black; 
-	box-shadow: 3px 3px; 
-	border-radius: 20px;
-	margin: 50px 20px;
+      box-shadow: 3px 3px; 
+      border-radius: 20px;
+      margin: 50px 20px;
 }
-
+                                          
 .q2, .q3 {
       padding: 0vw 5vw;
       text-align: center;
-      display: block;
+      display: inline;
 }
-
-
+                                          
+                                          
 #q4 {
       padding: 8px 12px;
       margin: 8px 0;
@@ -416,7 +442,7 @@ fieldset {
       color: rgb(56, 56, 56);
       letter-spacing: 4px;
 }
-
+                                          
 textarea {
       padding: 8px 12px;
       margin: 8px 0px;
@@ -426,17 +452,17 @@ textarea {
       border-radius: 20px;
       transition: 0.3s;
 }
-
+                                          
 textarea:focus {
       background-color: rgba(27, 4, 35, 0.1);
       border-radius: 20px;
 }
-
+                                          
 /* Submit Button */
 .submitbtn {
-    text-align: center;
+      text-align: center;
 }
-
+                                          
 .submitbtn input {
       padding: 16px 32px;
       margin: 8px 2px;
@@ -449,7 +475,7 @@ textarea:focus {
       transition: 0.2s;
       border-radius: 20px;
 }
-
+                                          
 .submitbtn input:hover {
       border: rgb(186, 148, 196);
       background-color: rgb(62, 45, 66);
