@@ -566,10 +566,49 @@ textarea:focus {
       line-height: 220%;
       background-color: rgba(202, 188, 216, 0.5);
       border-radius: 20px;
+      text-align: justify;
 }
 
 .e_container h1 {
-background-color: rgb(198, 162, 231, 0.7);
+      background-color: rgb(198, 162, 231, 0.7);
       color: #341142;
       border-radius: 20px;
+}
+
+.ex ol {
+      background-color: rgba(86, 59, 112, 0.7);
+      color: white;
+      border-radius: 20px;
+}
+
+kbd {
+      font-family: 'Special Elite', cursive;
+      font-size: 16px;
+}
+
+cite {
+      word-wrap: break-word;
+      font-size: 16px;
+}
+
+.examples li a {
+      text-decoration: none;
+      font-size: 16px;
+}
+
+.examples li a:link {
+      color: rgb(248, 248, 248);
+}
+
+.examples li a:visited {
+      color: rgb(204, 172, 204);
+}
+
+.examples li a:hover {
+      background-color: #df8eff;
+      color: black;
+}
+
+.examples li a:active {
+      background-color: yellow;
 }

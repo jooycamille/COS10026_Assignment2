@@ -146,4 +146,9 @@
       #r_img {
             width: 100%;
       }
+
+      /* ########## Enhancement Html ########## */
+      .e_container h1 {
+            font-size: 30px;
+      }
 }
