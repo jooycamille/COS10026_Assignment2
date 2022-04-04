@@ -2,17 +2,14 @@
 <html lang="en">
 
 <head>
-  <title>Voice Technology | Enhancement</title>
   <meta charset="utf-8">
   <meta name="description" content="Voice Technology">
   <meta name="author" content="Joy, Nelson, Uzman, Tom, Minh">
   <!-- Viewport set to scale 1.0 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Voice Technology | Enhancements</title>
   <!-- References to external CSS files-->
   <link rel="stylesheet" href="/styles/styles.css">
-  <link rel="stylesheet" href="/styles/navbar.css">
-
   <!-- References to external fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,45 +26,56 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-
   <!-- References to external responsive CSS file -->
   <link rel="stylesheet" href="/styles/responsive.css" media="screen and (max-width: 1024px)">
-
-  <!-- navbar -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div class="topnav" id="myTopnav">
-    <a href="index.html">
-      <header>Voice Technology</header>
-    </a>
-    <a href="enhancements.html">Enhancements</a>
-    <a href="quiz.html">Quiz</a>
-    <a href="topic.html">Topic</a>
-    <a href="index.html">Home</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+  <!-- Navigation Section -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <header>
+        <a href="index.html" id="navbar__logo">Voice Technology</a>
+      </header>
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span> <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="index.html" class="navbar__links">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="topic.html" class="navbar__links">Topic</a>
+        </li>
+        <li class="navbar__item">
+          <a href="quiz.html" class="navbar__links">Quiz</a>
+        </li>
+        <li class="navbar__item">
+          <a href="enhancements.html" class="navbar__links">Enhancements</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <!-- Content -->
-  <!-- <section>
-                  <p>
-                        figure: 
-                        https://www.w3.org/Style/Examples/007/figures.en.html
-
-                        zoom on hover 
-                        https://www.w3schools.com/howto/howto_css_zoom_hover.asp
-
-                        side hoverable navigation buttons
-                        https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp
-
-                        responsive design when screen is less then 980px on navigation bar
-
-                  </p>                  
-            </section> -->
-
-  <!-- Footer -->
+  <article class="e_container">
+    <h1>Enhancements</h1>
+    <ol>
+      <li>
+        Figure: https://www.w3.org/Style/Examples/007/figures.en.html
+      </li>
+      <li>
+        Zoom on Hover: https://www.w3schools.com/howto/howto_css_zoom_hover.asp
+      </li>
+      <li>
+        Side Hoverable Navigation Buttons: https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp
+      </li>
+      <li>
+        Create Tabbed Menu: https://www.w3schools.com/cssref/sel_target.asp
+      </li>
+    </ol>
+  </article>
+  <!-- Footer Section -->
   <footer>
     <article>
       <h3 id="footer_h3">Swinburne University of Technology &#169; | Assignment 1 </h3>
@@ -76,13 +84,11 @@
         <li><a href="mailto:101934317@student.swin.edu.au"> Joy </a></li>
         <li><a href="mailto:nelsonhain@gmail.com"> Nelson </a></li>
         <li><a href="mailto:103844052@student.swin.edu.au"> Minh </a></li>
-        <li><a href="mailto:t103177240@student.swin.edu.a"> Tom </a></li>
+        <li><a href="mailto:103177240@student.swin.edu.a"> Tom </a></li>
         <li><a href="mailto:uzmanshafifassy@gmail.com"> Uzman </a></li>
       </ul>
     </article>
-
   </footer>
-  <script src="/styles/navbar.js"></script>
 </body>
 
 </html>
