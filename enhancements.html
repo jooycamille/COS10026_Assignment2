@@ -32,7 +32,7 @@
 
 <body>
   <!-- Navigation Section -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar_e">
     <div class="navbar__container">
       <header>
         <a href="index.html" id="navbar__logo">Voice Technology</a>
@@ -141,6 +141,44 @@
       <cite>https://www.w3schools.com/cssref/css3_pr_word-wrap.asp</cite>
       <ol class="examples">
         <li><a href="enhancements.html">Resize to see the citations word-wrap as you decrease the size</a></li>
+      </ol>
+
+      <h4>Responsive Navigation Bar:</h4>
+      <samp class="navbar_codes">
+        .navbar__toggle .bar { <br>
+        width: 25px; <br>
+        height: 3px; <br>
+        margin: 5px auto; <br>
+        transition: all 0.3s ease-in-out; <br>
+        background: rgb(46, 46, 46); <br>
+        } <br>
+        <br>
+        #mobile-menu { <br>
+        position: absolute; <br>
+        top: 20%; <br>
+        right: 5%; <br>
+        transform: translate(5%, 20%); <br>
+        } <br>
+        <br>
+        .navbar__toggle .bar { <br>
+        display: block; <br>
+        cursor: pointer; <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(2) { <br>
+        opacity: 0; <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(1) { <br>
+        transform: translateY(8px) rotate(45deg); <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(3) { <br>
+        transform: translateY(-8px) rotate(-45deg); <br>
+        } <br>
+      </samp>
+      <ol class="examples">
+        <li><a href="#navbar_e">When the screen max-width reach 960px, the navigation bar becomes mobile-friendly</a></li>
       </ol>
     </section>
   </article>

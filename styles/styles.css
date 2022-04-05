@@ -608,7 +608,7 @@ cite {
 }
 
 .examples li a:visited {
-      color: rgb(204, 172, 204);
+      color: rgb(242, 226, 226);
 }
 
 .examples li a:hover {
@@ -618,4 +618,8 @@ cite {
 
 .examples li a:active {
       background-color: yellow;
+}
+
+.navbar_codes {
+      columns: 2;
 }
