@@ -579,16 +579,23 @@ textarea:focus {
       background-color: rgba(86, 59, 112, 0.7);
       color: white;
       border-radius: 20px;
+      padding-bottom: 20px;
 }
 
-kbd {
-      font-family: 'Special Elite', cursive;
+samp {
+      font-family: monospace;
       font-size: 16px;
+      line-height: 0;
 }
 
 cite {
       word-wrap: break-word;
       font-size: 16px;
+}
+
+.examples {
+      margin-right: 20px;
+      margin-bottom: 20px;
 }
 
 .examples li a {
