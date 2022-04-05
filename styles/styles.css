@@ -79,11 +79,13 @@ figure {
       margin: 0.5em;
       padding: 0.5em;
       display: table;
+      /* aligns the caption and image together */
 }
 
 figcaption {
       display: table-caption;
       caption-side: bottom;
+      /* positions the caption on the bottom */
 }
 
 figcaption a {
@@ -129,6 +131,7 @@ figcaption a {
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
+      /* creates a linear gradient color for the text */
       cursor: pointer;
       font-size: 2rem;
       padding-top: 40px;
@@ -220,6 +223,7 @@ footer article {
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
+      /* background graphic for the page which is not scrollable and covers the whole page */
 }
 
 .index_container {
@@ -398,8 +402,33 @@ dl>dt {
 }
 
 #r_img {
-      width: 40%;
-      height: auto;
+      width: 200%;
+}
+
+/* References */
+.ref {
+      margin: 40px;
+}
+
+.ref li a {
+      text-decoration: none;
+}
+
+.ref li a:link {
+      color: rgb(0, 0, 0);
+}
+
+.ref li a:visited {
+      color: rgb(0, 0, 0);
+}
+
+.ref li a:hover {
+      color: black;
+      text-decoration: underline;
+}
+
+.ref li a:active {
+      background-color: yellow;
 }
 
 /* ########## Quiz HTML CSS ########## */
@@ -579,16 +608,23 @@ textarea:focus {
       background-color: rgba(86, 59, 112, 0.7);
       color: white;
       border-radius: 20px;
+      padding-bottom: 20px;
 }
 
-kbd {
-      font-family: 'Special Elite', cursive;
+samp {
+      font-family: monospace;
       font-size: 16px;
+      line-height: 0;
 }
 
 cite {
       word-wrap: break-word;
       font-size: 16px;
+}
+
+.examples {
+      margin-right: 20px;
+      margin-bottom: 20px;
 }
 
 .examples li a {
@@ -601,7 +637,7 @@ cite {
 }
 
 .examples li a:visited {
-      color: rgb(204, 172, 204);
+      color: rgb(242, 226, 226);
 }
 
 .examples li a:hover {
@@ -611,4 +647,8 @@ cite {
 
 .examples li a:active {
       background-color: yellow;
+}
+
+.navbar_codes {
+      columns: 2;
 }

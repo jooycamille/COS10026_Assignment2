@@ -11,13 +11,12 @@
       }
 
       /* ########## Topic Html ########## */
-
       #growth figure {
             float: none;
       }
 
       #r_img {
-            width: 60%;
+            width: 100%;
       }
 }
 
@@ -140,10 +139,6 @@
       }
 
       #g_img {
-            width: 100%;
-      }
-
-      #r_img {
             width: 100%;
       }
 

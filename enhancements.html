@@ -26,15 +26,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <!-- Special Elite font -->
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   <!-- References to external responsive CSS file -->
   <link rel="stylesheet" href="/styles/responsive.css" media="screen and (max-width: 1024px)">
 </head>
 
 <body>
   <!-- Navigation Section -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar_e">
     <div class="navbar__container">
       <header>
         <a href="index.html" id="navbar__logo">Voice Technology</a>
@@ -62,113 +60,87 @@
   <!-- Content -->
   <article class="e_container">
     <h1>Enhancements</h1>
-    <div class="ex">
-      <ol>
-        <li>
-          Figure alignment with the caption:
-          <p>
-            <kbd>
-              figure { <br>
-              text-align: center; <br>
-              display: table; <br>
-              } <br>
-              <br>
-              figcaption { <br>
-              display: table-caption; <br>
-              caption-side: bottom; <br>
-              } <br>
-            </kbd>
-            <cite>https://www.w3.org/Style/Examples/007/figures.en.html</cite>
-          <ol class="examples">
-            Extension Application:
-            <li><a href="/topic.html#d_img">development image</a></li>
-            <li><a href="/topic.html#g_img">growth and future image</a></li>
-            <li><a href="/topic.html#r_img">relevant technology image</a></li>
-          </ol>
-          </p>
-        </li>
-        <li>
-          Zoom on Hover:
-          <p>
-            <kbd>
-              #g_img:hover { <br>
-                transform: scale(1.5); <br>
-              } <br>
-            </kbd>
-            <cite>https://www.w3schools.com/howto/howto_css_zoom_hover.asp</cite>
-            <ol class="examples">
-              Extension Application:
-              <li><a href="topic.html#g_img">Hover on photo to see it transform</a></li>
-            </ol>
-          </p>
-        </li>
-        <li>
-          Side Hoverable Navigation Buttons: 
-          <p>
-            <kbd>
-              #sidenav a { <br>
-                position: fixed; <br>
-                left: -220px; <br>
-                transition: 0.3s; <br>
-                padding: 20px 40px 20px; <br>
-                width: 260px; <br>
-                text-decoration: none; <br>
-                font-size: 16px; <br>
-                text-transform: uppercase; <br>
-                color: black; <br>
-                border-radius: 0 20px 20px 0; <br>
-                margin: 0; <br>
-              } <br>
-              <br>
-              #sidenav a:hover { <br>
-                left: 0; <br>
-                background-color: #000000; <br>
-                color: #e6d1ee; <br>
-              } <br>
-            </kbd>
-            <cite>https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp</cite>
-            <ol class="examples">
-              Extension Application:
-              <li><a href="topic.html#sidenav">Side Navigation</a></li>
-            </ol>
-          </p>
-        </li>
-        <li>
-          Create Tabbed Menu: 
-          <p>
-            <kbd>
-              .q_sect article { <br>
-                display: none; <br>
-              } <br>
-              <br>
-              .q_sect article:target { <br>
-                display: block; <br>
-              } <br>
-            </kbd>
-            <cite>https://www.w3schools.com/cssref/sel_target.asp</cite>
-            <ol class="examples">
-              Extension Application:
-              <li><a href="quiz.html#quiznav">Quiz Navigation Tabs for the questions</a></li>
-            </ol>
-          </p>
-        </li>
-        <li>
-          Word Wrap: 
-          <p>
-            <kbd>
-              cite { <br>
-                word-wrap: break-word; <br>
-              } <br>
-            </kbd>
-            <cite>https://www.w3schools.com/cssref/css3_pr_word-wrap.asp</cite>
-              <ol class="examples">
-                Extension Application:
-                <li><a href="enhancements.html">Resize to see the citations word-wrap as you decrease the size</a></li>
-              </ol>
-          </p>
-        </li>
+    <section class="ex">
+      <h4>Side Hoverable Navigation Buttons: </h4>
+      <samp>
+        #sidenav a { <br>
+        position: fixed; <br>
+        left: -220px; <br>
+        transition: 0.3s; <br>
+        padding: 20px 40px 20px; <br>
+        width: 260px; <br>
+        text-decoration: none; <br>
+        font-size: 16px; <br>
+        text-transform: uppercase; <br>
+        color: black; <br>
+        border-radius: 0 20px 20px 0; <br>
+        margin: 0; <br>
+        } <br>
+        <br>
+        #sidenav a:hover { <br>
+        left: 0; <br>
+        background-color: #000000; <br>
+        color: #e6d1ee; <br>
+        } <br>
+      </samp>
+      <cite>https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp</cite>
+      <ol class="examples">
+        <li><a href="topic.html#sidenav">Side Navigation</a></li>
       </ol>
-    </div>
+
+      <h4>Create Tabbed Menu:</h4>
+      <samp>
+        .q_sect article { <br>
+        display: none; <br>
+        } <br>
+        <br>
+        .q_sect article:target { <br>
+        display: block; <br>
+        } <br>
+      </samp>
+      <cite>https://www.w3schools.com/cssref/sel_target.asp</cite>
+      <ol class="examples">
+        <li><a href="quiz.html#quiznav">Quiz Navigation Tabs for the questions</a></li>
+      </ol>
+
+      <h4>Responsive Navigation Bar:</h4>
+      <samp class="navbar_codes">
+        .navbar__toggle .bar { <br>
+        width: 25px; <br>
+        height: 3px; <br>
+        margin: 5px auto; <br>
+        transition: all 0.3s ease-in-out; <br>
+        background: rgb(46, 46, 46); <br>
+        } <br>
+        <br>
+        #mobile-menu { <br>
+        position: absolute; <br>
+        top: 20%; <br>
+        right: 5%; <br>
+        transform: translate(5%, 20%); <br>
+        } <br>
+        <br>
+        .navbar__toggle .bar { <br>
+        display: block; <br>
+        cursor: pointer; <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(2) { <br>
+        opacity: 0; <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(1) { <br>
+        transform: translateY(8px) rotate(45deg); <br>
+        } <br>
+        <br>
+        #mobile-menu.is-active .bar:nth-child(3) { <br>
+        transform: translateY(-8px) rotate(-45deg); <br>
+        } <br>
+      </samp>
+      <ol class="examples">
+        <li><a href="#navbar_e">When the screen max-width reach 960px, the navigation bar becomes mobile-friendly</a></li>
+      </ol>
+    </section>
   </article>
   <!-- Footer Section -->
   <footer>
