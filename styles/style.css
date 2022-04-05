@@ -23,7 +23,6 @@ body {
       margin-top: 40px;
       margin-bottom: 40px;
       width: 100%;
-      background: rgb(231, 215, 251);
       background: linear-gradient(0deg, rgba(231, 215, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
@@ -59,6 +58,11 @@ h4 {
 
 section {
       width: 100%;
+      background-color: rgb(221, 187, 230, 0.2);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 20px;
+      border: 2px solid rgb(194, 182, 186);
 }
 
 aside {
@@ -239,7 +243,6 @@ footer article {
 }
 
 .index_container h1 {
-      background-color: rgb(198, 162, 231, 0.7);
       color: #341142;
       border-radius: 20px;
 }
@@ -254,6 +257,11 @@ footer article {
       border-radius: 20px;
       box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.33);
       float: left;
+}
+
+#youtube a {
+      text-decoration: none;
+      float: right;
 }
 
 /* ########## Topic HTML CSS ########## */
@@ -521,6 +529,7 @@ fieldset {
       box-shadow: 3px 3px;
       border-radius: 20px;
       margin: 50px 20px;
+      background-color: #f8f0fd;
 }
 
 .q2,
@@ -593,13 +602,13 @@ textarea:focus {
       min-height: 20px;
       /* as the browser shrinks, it makes sure that the min-height of this text is 20px */
       line-height: 220%;
-      background-color: rgba(202, 188, 216, 0.5);
+      /* background: linear-gradient(0deg, rgba(231, 215, 251, 1) 100%, rgba(255, 255, 255, 1) 0%); */
+      /* border: 1px solid rgb(155, 145, 148); */
       border-radius: 20px;
       text-align: justify;
 }
 
 .e_container h1 {
-      background-color: rgb(198, 162, 231, 0.7);
       color: #341142;
       border-radius: 20px;
 }
