@@ -102,6 +102,13 @@
             transform: translateY(-8px) rotate(-45deg);
       }
 
+      /* ########## Index Html ########## */
+      article.index_container {
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 150px;
+      }
+
       /* ########## Quiz Html ########## */
       .quiz_nav a {
             display: block;
