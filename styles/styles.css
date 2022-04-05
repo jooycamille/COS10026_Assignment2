@@ -402,6 +402,32 @@ dl>dt {
       height: auto;
 }
 
+/* References */
+.ref {
+      margin: 40px;
+}
+
+.ref li a {
+      text-decoration: none;
+}
+
+.ref li a:link {
+      color: rgb(0, 0, 0);
+}
+
+.ref li a:visited {
+      color: rgb(0, 0, 0);
+}
+
+.ref li a:hover {
+      color: black;
+      text-decoration: underline;
+}
+
+.ref li a:active {
+      background-color: yellow;
+}
+
 /* ########## Quiz HTML CSS ########## */
 .quiz_content {
       padding: 80px;
