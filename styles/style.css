@@ -129,13 +129,8 @@ figcaption a {
 
 #navbar__logo {
       font-family: 'Sigmar One', cursive, Georgia, 'Times New Roman', Times, serif;
-      background-image: linear-gradient(to top, #8b05c0 0%, #ff99cc 100%);
-      background-size: 100%;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -moz-text-fill-color: transparent;
-      /* creates a linear gradient color for the text */
+      color: rgb(158, 55, 192);
+      text-shadow:4px 4px #8e8c97;
       cursor: pointer;
       font-size: 2rem;
       padding-top: 40px;
