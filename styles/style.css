@@ -69,7 +69,7 @@ aside {
       width: 30%;
       float: right;
       border: 2px groove #421f3f;
-      margin: 1em;
+      margin: 2em;
       padding: 1em;
       box-shadow: 10px 10px 5px #aaaaaa;
       border-radius: 20px;
@@ -373,6 +373,10 @@ tbody {
       text-align: justify;
 }
 
+#development figure {
+      width: 100%;
+}
+
 #d_img {
       width: 100%;
 }
@@ -404,8 +408,12 @@ dl>dt {
       text-align: justify;
 }
 
+.r_fig {
+      width: 100%;
+}
+
 #r_img {
-      width: 200%;
+      width: 50%;
 }
 
 /* References */
@@ -597,8 +605,6 @@ textarea:focus {
       min-height: 20px;
       /* as the browser shrinks, it makes sure that the min-height of this text is 20px */
       line-height: 220%;
-      /* background: linear-gradient(0deg, rgba(231, 215, 251, 1) 100%, rgba(255, 255, 255, 1) 0%); */
-      /* border: 1px solid rgb(155, 145, 148); */
       border-radius: 20px;
       text-align: justify;
 }

@@ -124,7 +124,11 @@
 }
 
 @media screen and (max-width:600px) {
-
+      /* ########## Universal ########## */
+      aside {
+            margin: 0;
+      }
+      
       /* ########## Navigation Bar ########## */
       #navbar__logo {
             font-size: 1.5rem;
