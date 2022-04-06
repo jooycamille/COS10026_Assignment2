@@ -218,7 +218,7 @@ footer article {
 /* ########## Index Html ########## */
 #index_body {
       width: 100%;
-      background-image: url(styles/images/background_photo1.jpg);
+      background-image: url(/styles/images/background_photo1.jpg);
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
