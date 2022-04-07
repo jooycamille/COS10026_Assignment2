@@ -154,7 +154,17 @@
       }
 
       /* ########## Enhancement Html ########## */
+      .e_container {
+            width: 100%;
+            line-height: 100%;
+            margin: auto;
+      }
+      
       .e_container h1 {
             font-size: 30px;
+      }
+
+      samp {
+            white-space: pre-line;
       }
 }

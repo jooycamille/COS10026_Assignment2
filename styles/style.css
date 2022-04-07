@@ -606,7 +606,6 @@ textarea:focus {
       /* as the browser shrinks, it makes sure that the min-height of this text is 20px */
       line-height: 220%;
       border-radius: 20px;
-      text-align: justify;
 }
 
 .e_container h1 {
@@ -658,8 +657,4 @@ cite {
 
 .examples li a:active {
       background-color: yellow;
-}
-
-.navbar_codes {
-      columns: 2;
 }
