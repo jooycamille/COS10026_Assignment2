@@ -34,32 +34,7 @@
 <body class="topic_body">
 
       <!-- ########## Navigation Section ########## -->
-
-      <nav class="navbar">
-            <div class="navbar__container">
-                  <header>
-                        <a href="index.html" id="navbar__logo">Voice Technology</a>
-                  </header>
-                  <div class="navbar__toggle" id="mobile-menu">
-                        <span class="bar"></span> <span class="bar"></span>
-                        <span class="bar"></span>
-                  </div>
-                  <ul class="navbar__menu">
-                        <li class="navbar__item">
-                              <a href="index.html" class="navbar__links">Home</a>
-                        </li>
-                        <li class="navbar__item">
-                              <a href="topic.html" class="navbar__links">Topic</a>
-                        </li>
-                        <li class="navbar__item">
-                              <a href="quiz.html" class="navbar__links">Quiz</a>
-                        </li>
-                        <li class="navbar__item">
-                              <a href="enhancements.html" class="navbar__links">Enhancements</a>
-                        </li>
-                  </ul>
-            </div>
-      </nav>
+	<?php include 'header.inc'; ?>
 
       <!-- ########## Sidebar Navigation ########## -->
       <div id="sidenav">
@@ -349,20 +324,7 @@
       </article>
 
       <!-- ########## Footer ########## -->
-      <footer>
-            <article>
-                  <h3 id="footer_h3">Swinburne University of Technology &#169; | Assignment 1 </h3>
-                  <ul id="contacts">
-                        <li id="email_icon">&#9993;</li>
-                        <li><a href="mailto:101934317@student.swin.edu.au"> Joy </a></li>
-                        <li><a href="mailto:101533031@student.swim.edu.au"> Nelson </a></li>
-                        <li><a href="mailto:103844052@student.swin.edu.au"> Minh </a></li>
-                        <li><a href="mailto:103177240@student.swin.edu.a"> Tom </a></li>
-                        <li><a href="mailto:102608927@student.swin.edu.au"> Uzman </a></li>
-                  </ul>
-            </article>
-
-      </footer>
+      <?php include 'footer.inc'; ?>
 </body>
 
 </html>
