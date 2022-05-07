@@ -59,7 +59,7 @@ h4 {
 section {
       width: 100%;
       background-color: rgb(221, 187, 230, 0.2);
-      padding: 20px;
+      padding: 60px;
       margin: 20px;
       border-radius: 20px;
       border: 2px solid rgb(194, 182, 186);
@@ -69,7 +69,7 @@ aside {
       width: 30%;
       float: right;
       border: 2px groove #421f3f;
-      margin: 2em;
+      margin: 1em;
       padding: 1em;
       box-shadow: 10px 10px 5px #aaaaaa;
       border-radius: 20px;
