@@ -83,13 +83,13 @@
                                     <td>Expensive, since they usually come as a function of smart devices</td>
                               </tr>
                               <tr>
-                                    <td>Can be connected to other devices and smart appliances, which helps to complete
-                                          tasks more easily and efficiently</td>
+                                    <td>Can be connected to other devices and smart appliances, to help complete
+                                          tasks easily and efficiently</td>
                                     <td>Inaccuracy in recognising voice</td>
                               </tr>
                               <tr>
                                     <td>Conveniency</td>
-                                    <td>Many tasks cannot be done through voice technology due to the complexity of the
+                                    <td>Limitations - Many tasks cannot be done through voice technology due to the complexity of the
                                           programming involved</td>
                               </tr>
                               <tr>

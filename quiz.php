@@ -49,7 +49,7 @@
                         </p>
                         <p>
                               Last name:
-                              <input type="text" id="lname" name="lname" maxlength="30" placeholder="Last Name Name"
+                              <input type="text" id="lname" name="lname" maxlength="30" placeholder="Enter Last Name"
                                     pattern="^[a-zA-z_- ]+$" required="required">
                         </p>
                         <!-- ^[a-zA-z_- ]+$ input pattern allows them to only allow alpha, hyphen and spaces when filling in the form -->
