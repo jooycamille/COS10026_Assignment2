@@ -44,9 +44,62 @@
             	$data = htmlspecialchars($data);
             	return $data;}
 	?>
-	<?php
 	
+	<?php
+		if (isset ($_POST["fname"])) {
+            $fname = $_POST["fname"];
+        }
+        else{
+            header ("location: quiz.php");
+        }
+
+        if (isset ($_POST["lname"])) {
+            $lname = $_POST["lname"];
+        }
+        else{
+            header ("location: quiz.php");
+        }
+		if(isset($_POST["studentid"])) {
+			$studentid = $_POST["studentid"]
+		}
+		else{
+			header("location: quiz.php")
+		}
+		if(isset($_POST["q1"])) {
+			$q1 = $_POST["q1"]
+		}
+		else{
+			header("location: quiz.php")
+		}
+		if(isset($_POST["q2"])) {
+			$q2 = $_POST["q2"];
+		}
+		else{
+			$q2 = "Unknown answer"
+		}
+		$q3 = "";
+		if (isset($_POST["applesiri"])) $q3 = $q3. "Apple Siri";
+		if (isset($_POST["amazon"])) $q3 = $q3. "Amazon Alexa";
+		if (isset($_POST["google"])) $q3 = $q3. "Google Assistant";
+		if (isset($_POST["dragon"])) $q3 = $q3. "Dragon Professional";
+
+		if (isset($_POST["q4"])) {
+			$q4 = $_POST["q4"]
+		}
+		else {
+			header ("location: quiz.php")
+		}
+
+		$fname = sanitise_input($fname);
+		$lname = sanitise_input($lname);
+		$studentid = sanitise_input($studentid);
+		$q1 = sanitise_input($q1);
+		$q2 = sanitise_input($q2);
+		$q4 = sanitise_input($q4);
+
+
 	?>
+	
 
 	
 	<?php include 'footer.inc'; ?>
