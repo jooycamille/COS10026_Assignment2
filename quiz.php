@@ -38,7 +38,7 @@
 
       <!-- Content -->
       <article class="quiz_content">
-            <form action="markquiz.php" method="get" novalidate = "novalidate">
+            <form action="markquiz.php" method="post" novalidate = "novalidate">
                   <fieldset id="idsec">
                         <legend class="f_section"> Registration </legend>
                         <h2>Please enter the details below</h2>
