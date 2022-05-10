@@ -38,7 +38,14 @@
 	<?php 
 		
 		//WRITE SANITIZATION VALIDATION CODE HERE
-		
+	function sanitise_input($data) {
+            	$data = trim($data);
+            	$data = stripslashes($data);
+            	$data = htmlspecialchars($data);
+            	return $data;}
+	?>
+	<?php
+	
 	?>
 
 	
