@@ -124,7 +124,7 @@
                               <p>
                                     <label for="q4">Which of these catagories is Voice Technology related to?</label>
                                     <br />
-                                    <select name="q4" id="q4" required="required">
+                                    <select name="q4" id="q4" name="q4" required="required">
                                           <option value="" disabled selected> Please Select </option>
                                           <option value="civil"> Civil Engineering </option>
                                           <option value="bio"> Biometrics </option>
