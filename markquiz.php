@@ -33,89 +33,108 @@
 </head>
 <body>
 	<?php include 'header.inc'; ?>
-	
 
 	<?php 
+		//Get Connectiong Settings
+		require_once("settings.php");
 		
-		//WRITE SANITIZATION VALIDATION CODE HERE
-	function sanitise_input($data) {
-            	$data = trim($data);
-            	$data = stripslashes($data);
-            	$data = htmlspecialchars($data);
-            	return $data;}
-	?>
-	
-	<?php
-	$SCORE = 0;	
-	if (isset ($_POST["fname"])) 
-	{
+		//Open Server Connection
+		$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
+		
+		//Data Sanitization Function
+		function sanitise_input($data) {
+				$data = trim($data);
+				$data = stripslashes($data);
+				$data = htmlspecialchars($data);
+				return $data;}
+		
+		//Sanitize Data
+		
+		
+		//Validate Input Data
+		$errMsg = "";
+		if (isset ($_POST["fname"])) {
             $fname = $_POST["fname"];
         }
-        else
-	{
+        else{
             header ("location: quiz.php");
         }
-
-        if (isset ($_POST["lname"])) 
-	{
+        if (isset ($_POST["lname"])) {
             $lname = $_POST["lname"];
         }
         else{
             header ("location: quiz.php");
         }
-	if(isset($_POST["studentid"])) 
-	{
-	    $studentid = $_POST["studentid"];
-	}
-	else
-	{
-	    header("location: quiz.php");
-	}
-	if(isset($_POST["q1"])) 
-	{
-	    $q1 = $_POST["q1"];
-	    $SCORE += 1;
-	}
-	else
-	{
-	   header("location: quiz.php")
-	}
-	if(isset($_POST["q2"])) 
-	{
-	   $q2 = $_POST["q2"];
-	   $SCORE += 1;
-	}
-	else
-	{
-	   $q2 = "Unknown answer";
-	}
-	$q3 = "";
-	if (isset($_POST["applesiri"])) $q3 = $q3. "Apple Siri";
-	if (isset($_POST["amazon"])) $q3 = $q3. "Amazon Alexa";
-	if (isset($_POST["google"])) $q3 = $q3. "Google Assistant";
-	if (isset($_POST["dragon"])) $q3 = $q3. "Dragon Professional";
+		if(isset($_POST["studentid"])) {
+			$studentid = $_POST["studentid"]
+		}
+		else{
+			header("location: quiz.php")
+		}
+		if(isset($_POST["q1"])) {
+			$q1 = $_POST["q1"]
+		}
+		else{
+			header("location: quiz.php")
+		}
+		if(isset($_POST["q2"])) {
+			$q2 = $_POST["q2"];
+		}
+		else{
+			$q2 = "Unknown answer"
+		}
+		$q3 = "";
+		if (isset($_POST["applesiri"])) $q3 = $q3. "Apple Siri";
+		if (isset($_POST["amazon"])) $q3 = $q3. "Amazon Alexa";
+		if (isset($_POST["google"])) $q3 = $q3. "Google Assistant";
+		if (isset($_POST["dragon"])) $q3 = $q3. "Dragon Professional";
 
-	if (isset($_POST["q4"])== 'bio') 
-	{
-	   $q4 = $_POST["q4"];
-	   $SCORE += 1;	
-	}
-	else 
-	{
-	   header ("location: quiz.php")
-	}
+		if (isset($_POST["q4"])) {
+			$q4 = $_POST["q4"]
+		}
+		else {
+			header ("location: quiz.php")
+		}
 
-	$fname = sanitise_input($fname);
-	$lname = sanitise_input($lname);
-	$studentid = sanitise_input($studentid);
-	$q1 = sanitise_input($q1);
-	$q2 = sanitise_input($q2);
-	$q4 = sanitise_input($q4);
+		$fname = sanitise_input($fname);
+		$lname = sanitise_input($lname);
+		$studentid = sanitise_input($studentid);
+		$q1 = sanitise_input($q1);
+		$q2 = sanitise_input($q2);
+		$q4 = sanitise_input($q4);
+		
+		if($errMsg != "") {
+			//display errors;
+		}
+		else {
+			//display success message and retry button
+		}
 
-
+		//Test Successful Connection
+		if(!$connection) {
+			echo "<p>Databse connection failure.</p>";
+		}
+		else {
+			//Add Test Data to the Database;
+			$sql_table = "results";
+			
+			$query = "insert into $sql_table (fname, lname, sid) values ($fname, $lname, $studentid)";
+			$result = mysqli_query($connection, $query);
+			
+			//Test Result
+			if(!$result) {
+				echo "<p>Error when adding data to table.</p>";
+			}
+			else {
+				//success code here
+			}
+		}
+		
+		//Free Up 'result' Memory and Close Database Connections
+		mysqli_free_result($result);
+		mysqli_close($connection);
+		
 	?>
-	
-
 	
 	<?php include 'footer.inc'; ?>
 </body>
