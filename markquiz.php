@@ -122,8 +122,9 @@
 			}
 			else {
 				echo "<p>
+					<br><br><br><br><br><br>
 					<strong>Name:</strong> $fname $lname </br>
-					<strong>Student ID:</strong> $studentid </br>
+					<strong>Student ID:</strong> $sid </br>
 					</br>
 					<strong>Question 1:</strong> $q1 </br>
 					<strong>Question 2:</strong> $q2 </br>
