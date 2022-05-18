@@ -97,7 +97,7 @@
                                           Siri </label>
                                     <label class="q2" for="q2c"><input type="radio" id="q2c" name="q2" value="cortana">
                                           Cortana </label>
-                                    <label class="q2" for="q2d"><input type="radio" id="q2d" name="q2t" value="audrey"
+                                    <label class="q2" for="q2d"><input type="radio" id="q2d" name="q2" value="audrey"
                                                 required="required"> Audrey </label>
                               </p>
                         </article>
@@ -108,13 +108,13 @@
                                     Which of the following are real-world examples of Voice Technology?
                               </p>
                               <p id="q3">
-                                    <label class="q3" for="applesiri"><input type="checkbox" id="applesiri" name="q3t"
+                                    <label class="q3" for="applesiri"><input type="checkbox" id="applesiri" name="q3"
                                                 value="applesiri"> Apple Siri </label>
                                     <label class="q3" for="amazon"><input type="checkbox" id="amazon" name="q3"
                                                 value="amazon"> Amazon Alexa </label>
                                     <label class="q3" for="google"><input type="checkbox" id="google" name="q3"
                                                 value="google"> Google Assistant </label>
-                                    <label class="q3" for="dragon"><input type="checkbox" id="dragon" name="q3tt"
+                                    <label class="q3" for="dragon"><input type="checkbox" id="dragon" name="q3"
                                                 value="dragon"> Dragon Professional </label>
                               </p>
                         </article>
