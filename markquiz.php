@@ -142,8 +142,8 @@
 			else {
 				//Add Test Data to the Database;
 				$sql_table = "attempts";
-				
-				$query = "INSERT INTO '$sql_table' (fname, lname, sid, q1, q2, q3, q4, q5) VALUES ('$fname', '$lname', '$sid', '$q1', '$q2', '$q3', '$q4', '$q5')";
+				$score = 0;
+				$query = "INSERT INTO `$sql_table`(`id`, `fname`, `lname`, `sid`, `q1`, `q2`, `q3`, `q4`, `q5`, `score`) VALUES ('PRIMARY','$fname','$lname','$sid','$q1','$q2','$q3','$q4','$q5','$score')";
 				$result = mysqli_query($connection, $query);
 				
 				//Test Result
@@ -151,11 +151,11 @@
 					echo "<p>Error when adding data to table.</p>";
 				}
 				else {
-					//success code here
+					echo "<p>You did it!</p>";
 				}
 				
 				//Free Up 'result' Memory and Close Database Connections
-				mysqli_free_result($result);
+				//mysqli_free_result($result);
 				mysqli_close($connection);
 			}
 		?>
