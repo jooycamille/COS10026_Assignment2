@@ -54,92 +54,80 @@
 		//Validate Input Data
 		$errMsg = "";
 		if (isset ($_POST["fname"])) {
-	    $fname = $_POST["fname"];
-	    $fname = sanitise_input($fname);	
-            }
+			$fname = $_POST["fname"];
+			$fname = sanitise_input($fname);	
+        }
         else{
-		$errMsg += 'No firstname';
-           }
-	if (!preg_match("/^[a-zA-z_- ]+$/", $fname))
-	{
-		$errMsg += "Please match the requested format";
-	}
-        if (isset ($_POST["lname"])) {
-	    $lname = $_POST["lname"];
-	    $lname = sanitise_input($lname);
-           }
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["lname"])) {
+			$lname = $_POST["lname"];
+			$lname = sanitise_input($lname);	
+        }
         else{
-		$errMsg += 'No lastname';
-         }
-	if (!preg_match("/^[a-zA-z_- ]+$/", $lname))
-	{
-		$errMsg += "Please match the requested format";
-	}
-		if(isset($_POST["studentid"])) {
-			$studentid = $_POST["studentid"]
-			$studentid = sanitise_input($studentid);
-		}
-		else{
-			$errMsg += 'No Student ID';
-		}
-	if (!is_numeric("$studentid"))
-	{
-		$errMsg += "Student id must be a number";
-	}
-		if (!preg_match("/^[a-zA-z_- ]+$/", $studentid))
-	{
-		$errMsg += "Please match the requested format";
-	}
-		if(isset($_POST["q1"])) {
-			$q1 = $_POST["q1"]
-			$q1 = sanitise_input($q1);
-		}
-		else{
-			$errMsg += 'Please answer properly';
-		}
-		if(isset($_POST["q2"])) {
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["studentid"])) {
+			$sid = $_POST["studentid"];
+			$sid = sanitise_input($sid);	
+        }
+        else{
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["q1"])) {
+			$q1 = $_POST["q1"];
+			$q1 = sanitise_input($q1);	
+        }
+        else{
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["q2"])) {
 			$q2 = $_POST["q2"];
 			$q2 = sanitise_input($q2);
-		}
-		else{
-			$errMsg += 'Please answer properly';
-		}
-		
-		if (isset($_POST["q3"])) 
-		{
+        }
+        else{
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["q3"])) {
 			$q3 = $_POST["q3"];
-			$q3 = sanitise_input($q3);
-		}
-		else 
-		{
-		$errMsg += 'Please answer properly';	
-		}
-
-		if (isset($_POST["q4"])) {
-			$q4 = $_POST["q4"]
-			$q4 = sanitise_input($q4);
-		}
-		else {
-			$errMsg += 'Please answer properly';
-		}
-
-		
-		
-		
-		
-		
-		
+			$q3 = sanitise_input($q3);	
+        }
+        else{
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["q4"])) {
+			$q4 = $_POST["q4"];
+			$q4 = sanitise_input($q4);	
+        }
+        else{
+			$errMsg += 'data error';
+	    }
+		$errMsg = "";
+		if (isset ($_POST["q5"])) {
+			$q5 = $_POST["q5"];
+			$q5 = sanitise_input($q5);	
+        }
+        else{
+			$errMsg += 'data error';
+	    }
 		
 		if($errMsg != "") {
 			echo"<p>$errMsg</p>";
 		}
 		else {
-			echo"<p>Congratulations! You have completed the quiz. <a href="quiz.php">Retry</a></p>";
+			echo"<p id = 'youtube'>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
 		}
 
 		//Test Successful Connection
+		$result;
 		if(!$connection) {
-			echo "<p>Databse connection failure.</p>";
+			echo "<p><br><br>Databse connection failure.</p>";
 		}
 		else {
 			//Add Test Data to the Database;
@@ -155,12 +143,11 @@
 			else {
 				//success code here
 			}
+			
+			//Free Up 'result' Memory and Close Database Connections
+			mysqli_free_result($result);
+			mysqli_close($connection);
 		}
-		
-		//Free Up 'result' Memory and Close Database Connections
-		mysqli_free_result($result);
-		mysqli_close($connection);
-		
 	?>
 	
 	<?php include 'footer.inc'; ?>
