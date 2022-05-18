@@ -121,7 +121,17 @@
 				echo"<p>$errMsg</p>";
 			}
 			else {
-				echo"<p id = 'youtube'>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
+				echo "<p>
+					<strong>Name:</strong> $fname $lname </br>
+					<strong>Student ID:</strong> $studentid </br>
+					</br>
+					<strong>Question 1:</strong> $q1 </br>
+					<strong>Question 2:</strong> $q2 </br>
+					<strong>Question 3:</strong> $q3 </br>
+					<strong>Question 4:</strong> $q4 </br>
+					<strong>Question 5:</strong> $q5 </br>
+					Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a>
+				</p>";
 			}
 
 			//Test Successful Connection
