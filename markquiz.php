@@ -57,52 +57,58 @@
 	    $fname = $_POST["fname"];
 	    $fname = sanitise_input($fname);	
             }
-        else{
-		$errMsg += 'No firstname';
+        else if($fname ==""){
+		$errMsg .= "<p>No firstname</p>";
            }
 	if (!preg_match("/^[a-zA-z_- ]+$/", $fname))
 	{
-		$errMsg += "Please match the requested format";
+		$errMsg .= "Please match the requested format";
+
 	}
         if (isset ($_POST["lname"])) {
 	    $lname = $_POST["lname"];
 	    $lname = sanitise_input($lname);
            }
         else{
-		$errMsg += 'No lastname';
+
+		
+		$errMsg .= "No lastname";
          }
 	if (!preg_match("/^[a-zA-z_- ]+$/", $lname))
 	{
-		$errMsg += "Please match the requested format";
+		$errMsg .= "Please match the requested format";
 	}
 		if(isset($_POST["studentid"])) {
-			$studentid = $_POST["studentid"]
+			$studentid = $_POST["studentid"];
 			$studentid = sanitise_input($studentid);
 		}
 		else{
-			$errMsg += 'No Student ID';
+			$errMsg .= "No Student ID";
 		}
 	if (!is_numeric("$studentid"))
 	{
-		$errMsg += "Student id must be a number";
+		$errMsg .= "Student id must be a number";
 	}
 		if (!preg_match("/^[a-zA-z_- ]+$/", $studentid))
 	{
-		$errMsg += "Please match the requested format";
+		$errMsg .= "Please match the requested format";
 	}
 		if(isset($_POST["q1"])) {
-			$q1 = $_POST["q1"]
+			$q1 = $_POST["q1"];
 			$q1 = sanitise_input($q1);
 		}
 		else{
-			$errMsg += 'Please answer properly';
+			$errMsg .= "Please answer proper";
+
 		}
 		if(isset($_POST["q2"])) {
 			$q2 = $_POST["q2"];
 			$q2 = sanitise_input($q2);
 		}
 		else{
-			$errMsg += 'Please answer properly';
+
+			$errMsg .= "Please answer prop";
+
 		}
 		
 		if (isset($_POST["q3"])) 
@@ -112,15 +118,17 @@
 		}
 		else 
 		{
-		$errMsg += 'Please answer properly';	
+
+		$errMsg .= "Please answer pro";	
 		}
 
 		if (isset($_POST["q4"])) {
-			$q4 = $_POST["q4"]
+			$q4 = $_POST["q4"];
 			$q4 = sanitise_input($q4);
 		}
 		else {
-			$errMsg += 'Please answer properly';
+			$errMsg .= "Please answer pr";
+
 		}
 
 		
@@ -132,9 +140,12 @@
 		
 		if($errMsg != "") {
 			echo"<p>$errMsg</p>";
+
+			echo"<p><a href='quiz.php'>Rretry</a></p>";
 		}
 		else {
-			echo"<p>Congratulations! You have completed the quiz. <a href="quiz.php">Retry</a></p>";
+			echo"<p>Congratulations! You have completed the quiz</p>";
+			
 		}
 
 		//Test Successful Connection
@@ -145,9 +156,10 @@
 			//Add Test Data to the Database;
 			$sql_table = "results";
 			
-			$query = "insert into $sql_table (fname, lname, sid, q1, q2, q3, q4, q5) values ($fname, $lname, $studentid, $q1, $q2, $q3, $q4, $q5)";
+			$query = "insert into $sql_table (fname, lname, sid) values ($fname, $lname, $studentid)";
 			$result = mysqli_query($connection, $query);
 			
+
 			//Test Result
 			if(!$result) {
 				echo "<p>Error when adding data to table.</p>";
