@@ -60,7 +60,14 @@
 			}
 			else {
 				//Display table with data from the database.
-				
+				echo "<table border = \"1\">";
+				echo "<tr>"
+					."<th> Full Name </th>"
+					."<th> Student ID </th>"
+					."<th> Attempts </th>"
+					."<th> Score </th>"
+					."</tr>";
+				echo "</table>";
 			}
 		}
 	?>
