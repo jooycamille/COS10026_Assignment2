@@ -118,7 +118,7 @@
 			//Add Test Data to the Database;
 			$sql_table = "results";
 			
-			$query = "insert into $sql_table (fname, lname, sid) values ($fname, $lname, $studentid)";
+			$query = "insert into $sql_table (fname, lname, sid, q1, q2, q3, q4, q5) values ($fname, $lname, $studentid, $q1, $q2, $q3, $q4, $q5)";
 			$result = mysqli_query($connection, $query);
 			
 			//Test Result
