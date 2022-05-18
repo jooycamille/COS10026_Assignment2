@@ -33,122 +33,122 @@
 </head>
 <body>
 	<?php include 'header.inc'; ?>
-
-	<?php 
-		//Get Connectiong Settings
-		require_once("settings.php");
-		
-		//Open Server Connection
-		$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
-		
-		//Data Sanitization Function
-		function sanitise_input($data) {
-				$data = trim($data);
-				$data = stripslashes($data);
-				$data = htmlspecialchars($data);
-				return $data;}
-		
-		//Sanitize Data
-		
-		
-		//Validate Input Data
-		$errMsg = "";
-		if (isset ($_POST["fname"])) {
-			$fname = $_POST["fname"];
-			$fname = sanitise_input($fname);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["lname"])) {
-			$lname = $_POST["lname"];
-			$lname = sanitise_input($lname);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["studentid"])) {
-			$sid = $_POST["studentid"];
-			$sid = sanitise_input($sid);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["q1"])) {
-			$q1 = $_POST["q1"];
-			$q1 = sanitise_input($q1);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["q2"])) {
-			$q2 = $_POST["q2"];
-			$q2 = sanitise_input($q2);
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["q3"])) {
-			$q3 = $_POST["q3"];
-			$q3 = sanitise_input($q3);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["q4"])) {
-			$q4 = $_POST["q4"];
-			$q4 = sanitise_input($q4);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		$errMsg = "";
-		if (isset ($_POST["q5"])) {
-			$q5 = $_POST["q5"];
-			$q5 = sanitise_input($q5);	
-        }
-        else{
-			$errMsg += 'data error';
-	    }
-		
-		if($errMsg != "") {
-			echo"<p>$errMsg</p>";
-		}
-		else {
-			echo"<p id = 'youtube'>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
-		}
-
-		//Test Successful Connection
-		$result;
-		if(!$connection) {
-			echo "<p><br><br>Databse connection failure.</p>";
-		}
-		else {
-			//Add Test Data to the Database;
-			$sql_table = "results";
+	<section class = "errorbox">
+		<?php 
+			//Get Connectiong Settings
+			require_once("settings.php");
 			
-			$query = "insert into $sql_table (fname, lname, sid, q1, q2, q3, q4, q5) values ($fname, $lname, $studentid, $q1, $q2, $q3, $q4, $q5)";
-			$result = mysqli_query($connection, $query);
+			//Open Server Connection
+			$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
 			
-			//Test Result
-			if(!$result) {
-				echo "<p>Error when adding data to table.</p>";
+			//Data Sanitization Function
+			function sanitise_input($data) {
+					$data = trim($data);
+					$data = stripslashes($data);
+					$data = htmlspecialchars($data);
+					return $data;}
+			
+			//Sanitize Data
+			
+			
+			//Validate Input Data
+			$errMsg = "";
+			if (isset ($_POST["fname"])) {
+				$fname = $_POST["fname"];
+				$fname = sanitise_input($fname);	
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["lname"])) {
+				$lname = $_POST["lname"];
+				$lname = sanitise_input($lname);	
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["studentid"])) {
+				$sid = $_POST["studentid"];
+				$sid = sanitise_input($sid);	
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["q1"])) {
+				$q1 = $_POST["q1"];
+				$q1 = sanitise_input($q1);	
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["q2"])) {
+				$q2 = $_POST["q2"];
+				$q2 = sanitise_input($q2);
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["q3"])) {
+				$q3 = $_POST["q3"];
+				$q3 = sanitise_input($q3);
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["q4"])) {
+				$q4 = $_POST["q4"];
+				$q4 = sanitise_input($q4);	
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			$errMsg = "";
+			if (isset ($_POST["q5"])) {
+				$q5 = $_POST["q5"];
+				$q5 = sanitise_input($q5);
+			}
+			else{
+				$errMsg += 'data error';
+			}
+			
+			if($errMsg != "") {
+				echo"<p>$errMsg</p>";
 			}
 			else {
-				//success code here
+				echo"<p id = 'youtube'>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
 			}
-			
-			//Free Up 'result' Memory and Close Database Connections
-			mysqli_free_result($result);
-			mysqli_close($connection);
-		}
-	?>
+
+			//Test Successful Connection
+			if(!$connection) {
+				echo "<p><br><br>Databse connection failure.</p>";
+			}
+			else {
+				//Add Test Data to the Database;
+				$sql_table = "attempts";
+				
+				$query = "INSERT INTO '$sql_table' (fname, lname, sid, q1, q2, q3, q4, q5) VALUES ('$fname', '$lname', '$sid', '$q1', '$q2', '$q3', '$q4', '$q5')";
+				$result = mysqli_query($connection, $query);
+				
+				//Test Result
+				if(!$result) {
+					echo "<p>Error when adding data to table.</p>";
+				}
+				else {
+					//success code here
+				}
+				
+				//Free Up 'result' Memory and Close Database Connections
+				mysqli_free_result($result);
+				mysqli_close($connection);
+			}
+		?>
+	</section>
 	
 	<?php include 'footer.inc'; ?>
 </body>
