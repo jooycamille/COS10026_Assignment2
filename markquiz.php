@@ -54,60 +54,87 @@
 		//Validate Input Data
 		$errMsg = "";
 		if (isset ($_POST["fname"])) {
-            $fname = $_POST["fname"];
-        }
+	    $fname = $_POST["fname"];
+	    $fname = sanitise_input($fname);	
+            }
         else{
-            header ("location: quiz.php");
-        }
+		$errMsg += 'No firstname';
+           }
+	if (!preg_match("/^[a-zA-z_- ]+$/", $fname))
+	{
+		$errMsg += "Please match the requested format";
+	}
         if (isset ($_POST["lname"])) {
-            $lname = $_POST["lname"];
-        }
+	    $lname = $_POST["lname"];
+	    $lname = sanitise_input($lname);
+           }
         else{
-            header ("location: quiz.php");
-        }
+		$errMsg += 'No lastname';
+         }
+	if (!preg_match("/^[a-zA-z_- ]+$/", $lname))
+	{
+		$errMsg += "Please match the requested format";
+	}
 		if(isset($_POST["studentid"])) {
 			$studentid = $_POST["studentid"]
+			$studentid = sanitise_input($studentid);
 		}
 		else{
-			header("location: quiz.php")
+			$errMsg += 'No Student ID';
 		}
+	if (!is_numeric("$studentid"))
+	{
+		$errMsg += "Student id must be a number";
+	}
+		if (!preg_match("/^[a-zA-z_- ]+$/", $studentid))
+	{
+		$errMsg += "Please match the requested format";
+	}
 		if(isset($_POST["q1"])) {
 			$q1 = $_POST["q1"]
+			$q1 = sanitise_input($q1);
 		}
 		else{
-			header("location: quiz.php")
+			$errMsg += 'Please answer properly';
 		}
 		if(isset($_POST["q2"])) {
 			$q2 = $_POST["q2"];
+			$q2 = sanitise_input($q2);
 		}
 		else{
-			$q2 = "Unknown answer"
+			$errMsg += 'Please answer properly';
 		}
-		$q3 = "";
-		if (isset($_POST["applesiri"])) $q3 = $q3. "Apple Siri";
-		if (isset($_POST["amazon"])) $q3 = $q3. "Amazon Alexa";
-		if (isset($_POST["google"])) $q3 = $q3. "Google Assistant";
-		if (isset($_POST["dragon"])) $q3 = $q3. "Dragon Professional";
+		
+		if (isset($_POST["q3"])) 
+		{
+			$q3 = $_POST["q3"];
+			$q3 = sanitise_input($q3);
+		}
+		else 
+		{
+		$errMsg += 'Please answer properly';	
+		}
 
 		if (isset($_POST["q4"])) {
 			$q4 = $_POST["q4"]
+			$q4 = sanitise_input($q4);
 		}
 		else {
-			header ("location: quiz.php")
+			$errMsg += 'Please answer properly';
 		}
 
-		$fname = sanitise_input($fname);
-		$lname = sanitise_input($lname);
-		$studentid = sanitise_input($studentid);
-		$q1 = sanitise_input($q1);
-		$q2 = sanitise_input($q2);
-		$q4 = sanitise_input($q4);
+		
+		
+		
+		
+		
+		
 		
 		if($errMsg != "") {
-			//display errors;
+			echo"<p>$errMsg</p>";
 		}
 		else {
-			//display success message and retry button
+			echo"<p>Congratulations! You have completed the quiz. <a href="quiz.php">Retry</a></p>";
 		}
 
 		//Test Successful Connection
