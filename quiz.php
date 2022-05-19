@@ -105,7 +105,7 @@
                         <article id="quest_3">
                               <h3>Question 3:</h3>
                               <p>
-                                    Which of the following are real-world examples of Voice Technology?
+                                    Which of the following is the earliest mainstream example of Voice Technology?
                               </p>
                               <p id="q3">
                                     <label class="q3" for="applesiri"><input type="checkbox" id="applesiri" name="q3"

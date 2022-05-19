@@ -120,19 +120,9 @@
 				if (!preg_match("/^[a-zA-Z]+$/", $q3)){
 					$errMsg .= "<p>The answer to question 3 is in the wrong format</p>";
 				}
-				if ($q3 == 'applesiri'){
-					$score += 4;
-				}
-				if ($q3 == 'amazon'){
+				if($q3 == 'applesiri'){
 					$score += 1;
 				}
-				if ($q3 == 'dragon'){
-					$score += 1;
-				}
-				if ($q3 == 'google'){
-					$score += 1;
-				}
-				
 			}
 			else{
 				$errMsg .= "<p>please answer q3</p>";
@@ -161,6 +151,9 @@
 				if (!preg_match("/^[a-zA-Z- ]+$/", $q5)){
 					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 5</p>";
 				}
+				if ((strpos($q5, 'convenient')== true)||(strpos($q5, 'disabilities')== true)||(strpos($q5, 'easy')== true)||(strpos($q5, 'efficient')== true)||(strpos($q5, 'easily')== true)||(strpos($q5, 'efficiently')== true)||(strpos($q5, 'remember')== true)){
+					$score += 1;
+				}
 			}
 			
 			if($errMsg != "") {
@@ -178,7 +171,6 @@
 			else {
 				//Add Test Data to the Database;
 				$sql_table = "attempts";
-				$score = 0;
 				$query = "INSERT INTO `$sql_table`(`id`, `fname`, `lname`, `sid`, `q1`, `q2`, `q3`, `q4`, `q5`, `score`) VALUES ('PRIMARY','$fname','$lname','$sid','$q1','$q2','$q3','$q4','$q5','$score')";
 				$result = mysqli_query($connection, $query);
 				
