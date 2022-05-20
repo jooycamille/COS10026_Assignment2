@@ -62,11 +62,21 @@
 				//Display table with data from the database.
 				echo "<table border = \"1\">";
 				echo "<tr>"
-					."<th> Full Name </th>"
+					."<th> Last Name </th>"
 					."<th> Student ID </th>"
 					."<th> Attempts </th>"
 					."<th> Score </th>"
 					."</tr>";
+				
+				while ($row = mysqli_fetch_assoc($result)) {
+					echo "<tr>";
+					echo "<td>", $row["lname"], "</td>";
+					echo "<td>", $row["sid"], "</td>";
+					echo "<td>", $row["numOfAttempts"], "</td>";
+					echo "<td>", $row["score"], "</td>";
+					echo "</tr>";
+				}
+				
 				echo "</table>";
 			}
 		}
