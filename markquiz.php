@@ -181,6 +181,9 @@ session_start();
 				}
 				echo $_SESSION['attempt'];
 			}
+			
+			//Create Datetime on sucessful attempt.
+			$datetime = date("Y-m-d H:i:s");
 
 			//Test Successful Connection
 			if(!$connection) {
@@ -189,8 +192,8 @@ session_start();
 			else {
 				//Add Test Data to the Database;
 				$sql_table = "attempts";
-				$score = 0;
-				$numOfAttempts = 0;
+				//$numOfAttempts = 0;
+				
 				$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `numOfAttempts`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$numOfAttempts', '$score')";
 				$result = mysqli_query($connection, $query);
 				
