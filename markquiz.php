@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -53,92 +56,132 @@
 			
 			//Validate Input Data
 			$errMsg = "";
-			if (isset ($_POST["fname"])) {
+			$score = 0;
+			if(!isset($_SESSION['attempt'])){
+				$_SESSION['attempt'] = 0;
+			}
+			if (empty($_POST["fname"])){
+				$errMsg .= "<p>no first name</p>";
+			}
+			else {
 				$fname = $_POST["fname"];
-				$fname = sanitise_input($fname);	
+				$fname = sanitise_input($fname);
+				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+				}
+			}	
+			if (empty($_POST["lname"])){
+				$errMsg .= "<p>no last name</p>";
 			}
-			else{
-				$errMsg += 'data error';
-			}
-			$errMsg = "";
-			if (isset ($_POST["lname"])) {
+			else {
 				$lname = $_POST["lname"];
-				$lname = sanitise_input($lname);	
+				$lname = sanitise_input($lname);
+				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+				}
 			}
-			else{
-				$errMsg += 'data error';
+			
+			if (empty($_POST["studentid"])){
+				$errMsg .= "<p>no student id</p>";
 			}
-			$errMsg = "";
-			if (isset ($_POST["studentid"])) {
+			else {
 				$sid = $_POST["studentid"];
-				$sid = sanitise_input($sid);	
+				$sid = sanitise_input($sid);
+				if (!preg_match("/\d{7,10}/", $sid)){
+					$errMsg .= "<p>Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits</p>";
+				}
+			}
+			
+			if (empty ($_POST["q1"])) {
+				$errMsg .= "<p>please answer q1</p>";	
 			}
 			else{
-				$errMsg += 'data error';
-			}
-			$errMsg = "";
-			if (isset ($_POST["q1"])) {
 				$q1 = $_POST["q1"];
-				$q1 = sanitise_input($q1);	
+				$q1 = sanitise_input($q1);
+				if (!preg_match("/^[a-zA-Z- ]+$/", $q1)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 1</p>";
+				}
+				if ((strcasecmp($q1,'voice search')== 0)||(strcasecmp($q1,'voice recognition software') == 0)){
+					$score += 1;
+				}
 			}
-			else{
-				$errMsg += 'data error';
-			}
-			$errMsg = "";
+			
 			if (isset ($_POST["q2"])) {
 				$q2 = $_POST["q2"];
 				$q2 = sanitise_input($q2);
+				if (!preg_match("/^[a-zA-Z]+$/", $q2)){
+					$errMsg .= "<p>The answer to question 2 is in the wrong format</p>";
+				}
+				if ($q2 == 'audrey'){
+					$score += 1;
+				}
 			}
 			else{
-				$errMsg += 'data error';
+				$errMsg .= "<p>please answer q2</p>";
 			}
-			$errMsg = "";
+			
 			if (isset ($_POST["q3"])) {
 				$q3 = $_POST["q3"];
 				$q3 = sanitise_input($q3);
+				if (!preg_match("/^[a-zA-Z]+$/", $q3)){
+					$errMsg .= "<p>The answer to question 3 is in the wrong format</p>";
+				}
+				if($q3 == 'applesiri'){
+					$score += 1;
+				}
 			}
 			else{
-				$errMsg += 'data error';
+				$errMsg .= "<p>please answer q3</p>";
 			}
-			$errMsg = "";
+			
 			if (isset ($_POST["q4"])) {
 				$q4 = $_POST["q4"];
-				$q4 = sanitise_input($q4);	
+				$q4 = sanitise_input($q4);
+				if (!preg_match("/^[a-zA-Z]+$/", $q4)){
+					$errMsg .= "<p>The answer to question 4 is in the wrong format</p>";
+				}
+				if ($q4 == 'bio'){
+					$score += 1;
+				}	
 			}
 			else{
-				$errMsg += 'data error';
+				$errMsg .= "<p>please answer q4</p>";
 			}
-			$errMsg = "";
-			if (isset ($_POST["q5"])) {
+			
+			if (empty ($_POST["q5"])) {
+				$errMsg .= "<p>please answer q5</p>";
+			}
+			else{
 				$q5 = $_POST["q5"];
 				$q5 = sanitise_input($q5);
-			}
-			else{
-				$errMsg += 'data error';
+				if (!preg_match("/^[a-zA-Z- ]+$/", $q5)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 5</p>";
+				}
+				if ((strpos($q5, 'convenient')== true)||(strpos($q5, 'disabilities')== true)||(strpos($q5, 'easy')== true)||(strpos($q5, 'efficient')== true)||(strpos($q5, 'easily')== true)||(strpos($q5, 'efficiently')== true)||(strpos($q5, 'remember')== true)){
+					$score += 1;
+				}
 			}
 			
 			if($errMsg != "") {
 				echo"<p>$errMsg</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+				echo $_SESSION['attempt'];
 			}
 			else {
-				echo "<p>
-					<br><br><br><br><br><br>
-					<strong>Name:</strong> $fname $lname </br>
-					<strong>Student ID:</strong> $sid </br>
-					</br>
-					<strong>Question 1:</strong> $q1 </br>
-					<strong>Question 2:</strong> $q2 </br>
-					<strong>Question 3:</strong> $q3 </br>
-					<strong>Question 4:</strong> $q4 </br>
-					<strong>Question 5:</strong> $q5 </br>
-					Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a>
-				</p>";
+				echo "<p>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
+				echo "<p>$score</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+				echo $_SESSION['attempt'];
 			}
-			
-			
-			//Create Datetime on sucessful attempt.
-			$datetime = date("Y-m-d H:i:s");
-			
+
 			//Test Successful Connection
 			if(!$connection) {
 				echo "<p><br><br>Databse connection failure.</p>";
