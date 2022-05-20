@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -54,6 +57,9 @@
 			//Validate Input Data
 			$errMsg = "";
 			$score = 0;
+			if(!isset($_SESSION['attempt'])){
+				$_SESSION['attempt'] = 0;
+			}
 			if (empty($_POST["fname"])){
 				$errMsg .= "<p>no first name</p>";
 			}
@@ -158,10 +164,22 @@
 			
 			if($errMsg != "") {
 				echo"<p>$errMsg</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+				echo $_SESSION['attempt'];
 			}
 			else {
 				echo "<p>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
 				echo "<p>$score</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+				echo $_SESSION['attempt'];
 			}
 
 			//Test Successful Connection

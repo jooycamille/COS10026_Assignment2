@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -33,147 +36,175 @@
 </head>
 <body>
 	<?php include 'header.inc'; ?>
-
-	<?php 
-		//Get Connectiong Settings
-		require_once("settings.php");
-		
-		//Open Server Connection
-		$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
-		
-		//Data Sanitization Function
-		function sanitise_input($data) {
-				$data = trim($data);
-				$data = stripslashes($data);
-				$data = htmlspecialchars($data);
-				return $data;}
-		
-		//Sanitize Data
-		
-		
-		//Validate Input Data
-		$errMsg = "";
-		if (isset ($_POST["fname"])) {
-	    $fname = $_POST["fname"];
-	    $fname = sanitise_input($fname);	
-            }
-        else if($fname ==""){
-		$errMsg .= "<p>No firstname</p>";
-           }
-	if (!preg_match("/^[a-zA-z_- ]+$/", $fname))
-	{
-		$errMsg .= "Please match the requested format";
-
-	}
-        if (isset ($_POST["lname"])) {
-	    $lname = $_POST["lname"];
-	    $lname = sanitise_input($lname);
-           }
-        else{
-
-		
-		$errMsg .= 'No lastname';
-         }
-	if (!preg_match("/^[a-zA-z_- ]+$/", $lname))
-	{
-		$errMsg .= "Please match the requested format";
-	}
-		if(isset($_POST["studentid"])) {
-			$studentid = $_POST["studentid"];
-			$studentid = sanitise_input($studentid);
-		}
-		else{
-			$errMsg .= 'No Student ID';
-		}
-	if (!is_numeric("$studentid"))
-	{
-		$errMsg .= "Student id must be a number";
-	}
-		if (!preg_match("/^[a-zA-z_- ]+$/", $studentid))
-	{
-		$errMsg .= "Please match the requested format";
-	}
-		if(isset($_POST["q1"])) {
-			$q1 = $_POST["q1"];
-			$q1 = sanitise_input($q1);
-		}
-		else{
-			$errMsg += 'Please answer proper';
-
-		}
-		if(isset($_POST["q2"])) {
-			$q2 = $_POST["q2"];
-			$q2 = sanitise_input($q2);
-		}
-		else{
-
-			$errMsg .= 'Please answer prop';
-
-		}
-		
-		if (isset($_POST["q3"])) 
-		{
-			$q3 = $_POST["q3"];
-			$q3 = sanitise_input($q3);
-		}
-		else 
-		{
-
-		$errMsg .= 'Please answer pro';	
-		}
-
-		if (isset($_POST["q4"])) {
-			$q4 = $_POST["q4"];
-			$q4 = sanitise_input($q4);
-		}
-		else {
-			$errMsg .= 'Please answer pr';
-
-		}
-
-		
-		
-		
-		
-		
-		
-		
-		if($errMsg != "") {
-			echo"<p>$errMsg</p>";
-
-			echo"<p><a href='quiz.php'>Rretry</a></p>";
-		}
-		else {
-			echo"<p>Congratulations! You have completed the quiz</p>";
+	<section class = "errorbox">
+		<?php 
+			//Get Connectiong Settings
+			require_once("settings.php");
 			
-		}
-
-		//Test Successful Connection
-		if(!$connection) {
-			echo "<p>Databse connection failure.</p>";
-		}
-		else {
-			//Add Test Data to the Database;
-			$sql_table = "results";
+			//Open Server Connection
+			$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
 			
-			$query = "insert into $sql_table (fname, lname, sid) values ($fname, $lname, $studentid)";
-			$result = mysqli_query($connection, $query);
+			//Data Sanitization Function
+			function sanitise_input($data) {
+					$data = trim($data);
+					$data = stripslashes($data);
+					$data = htmlspecialchars($data);
+					return $data;}
 			
-
-			//Test Result
-			if(!$result) {
-				echo "<p>Error when adding data to table.</p>";
+			//Sanitize Data
+			
+			
+			//Validate Input Data
+			$errMsg = "";
+			$score = 0;
+			if(!isset($_SESSION['attempt'])){
+				$_SESSION['attempt'] = 0;
+			}
+			if (empty($_POST["fname"])){
+				$errMsg .= "<p>no first name</p>";
 			}
 			else {
-				//success code here
+				$fname = $_POST["fname"];
+				$fname = sanitise_input($fname);
+				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+				}
+			}	
+			if (empty($_POST["lname"])){
+				$errMsg .= "<p>no last name</p>";
 			}
-		}
-		
-		//Free Up 'result' Memory and Close Database Connections
-		mysqli_free_result($result);
-		mysqli_close($connection);
-		
-	?>
+			else {
+				$lname = $_POST["lname"];
+				$lname = sanitise_input($lname);
+				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+				}
+			}
+			
+			if (empty($_POST["studentid"])){
+				$errMsg .= "<p>no student id</p>";
+			}
+			else {
+				$sid = $_POST["studentid"];
+				$sid = sanitise_input($sid);
+				if (!preg_match("/\d{7,10}/", $sid)){
+					$errMsg .= "<p>Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits</p>";
+				}
+			}
+			
+			if (empty ($_POST["q1"])) {
+				$errMsg .= "<p>please answer q1</p>";	
+			}
+			else{
+				$q1 = $_POST["q1"];
+				$q1 = sanitise_input($q1);
+				if (!preg_match("/^[a-zA-Z- ]+$/", $q1)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 1</p>";
+				}
+				if ((strcasecmp($q1,'voice search')== 0)||(strcasecmp($q1,'voice recognition software') == 0)){
+					$score += 1;
+				}
+			}
+			
+			if (isset ($_POST["q2"])) {
+				$q2 = $_POST["q2"];
+				$q2 = sanitise_input($q2);
+				if (!preg_match("/^[a-zA-Z]+$/", $q2)){
+					$errMsg .= "<p>The answer to question 2 is in the wrong format</p>";
+				}
+				if ($q2 == 'audrey'){
+					$score += 1;
+				}
+			}
+			else{
+				$errMsg .= "<p>please answer q2</p>";
+			}
+			
+			if (isset ($_POST["q3"])) {
+				$q3 = $_POST["q3"];
+				$q3 = sanitise_input($q3);
+				if (!preg_match("/^[a-zA-Z]+$/", $q3)){
+					$errMsg .= "<p>The answer to question 3 is in the wrong format</p>";
+				}
+				if($q3 == 'applesiri'){
+					$score += 1;
+				}
+			}
+			else{
+				$errMsg .= "<p>please answer q3</p>";
+			}
+			
+			if (isset ($_POST["q4"])) {
+				$q4 = $_POST["q4"];
+				$q4 = sanitise_input($q4);
+				if (!preg_match("/^[a-zA-Z]+$/", $q4)){
+					$errMsg .= "<p>The answer to question 4 is in the wrong format</p>";
+				}
+				if ($q4 == 'bio'){
+					$score += 1;
+				}	
+			}
+			else{
+				$errMsg .= "<p>please answer q4</p>";
+			}
+			
+			if (empty ($_POST["q5"])) {
+				$errMsg .= "<p>please answer q5</p>";
+			}
+			else{
+				$q5 = $_POST["q5"];
+				$q5 = sanitise_input($q5);
+				if (!preg_match("/^[a-zA-Z- ]+$/", $q5)){
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 5</p>";
+				}
+				if ((strpos($q5, 'convenient')== true)||(strpos($q5, 'disabilities')== true)||(strpos($q5, 'easy')== true)||(strpos($q5, 'efficient')== true)||(strpos($q5, 'easily')== true)||(strpos($q5, 'efficiently')== true)||(strpos($q5, 'remember')== true)){
+					$score += 1;
+				}
+			}
+			
+			if($errMsg != "") {
+				echo"<p>$errMsg</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+			}
+			else {
+				echo "<p>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
+				echo "<p>$score</p>";
+				$_SESSION['attempt'] += 1;
+				if($_SESSION['attempt'] >= 3){
+					//stop submitting = time() + (5*60);
+					echo"<p>stappp</p>";
+				}
+				echo $_SESSION['attempt'];
+			}
+
+			//Test Successful Connection
+			if(!$connection) {
+				echo "<p><br><br>Databse connection failure.</p>";
+			}
+			else {
+				//Add Test Data to the Database;
+				$sql_table = "attempts";
+				$query = "INSERT INTO `$sql_table`(`id`, `fname`, `lname`, `sid`, `q1`, `q2`, `q3`, `q4`, `q5`, `score`) VALUES ('PRIMARY','$fname','$lname','$sid','$q1','$q2','$q3','$q4','$q5','$score')";
+				$result = mysqli_query($connection, $query);
+				
+				//Test Result
+				if(!$result) {
+					echo "<p>Error when adding data to table.</p>";
+				}
+				else {
+					echo "<p>You did it!</p>";
+				}
+				
+				//Free Up 'result' Memory and Close Database Connections
+				//mysqli_free_result($result);
+				mysqli_close($connection);
+			}
+		?>
+	</section>
 	
 	<?php include 'footer.inc'; ?>
 </body>
