@@ -67,7 +67,7 @@ session_start();
 				$fname = $_POST["fname"];
 				$fname = sanitise_input($fname);
 				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for first name.</p>";
 				}
 			}	
 			if (empty($_POST["lname"])){
@@ -77,7 +77,7 @@ session_start();
 				$lname = $_POST["lname"];
 				$lname = sanitise_input($lname);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space for last name.</p>";
 				}
 			}
 			
