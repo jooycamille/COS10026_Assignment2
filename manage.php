@@ -35,6 +35,8 @@
 	
 	<h1> Manager's Page </h1>
 	
+	<!-- Need to create buttons for each query. Some buttons will need input fields (form) alongside them. -->
+	
 	<section class = "manage_section">
 	<?php
 		//Get Connectiong Settings
