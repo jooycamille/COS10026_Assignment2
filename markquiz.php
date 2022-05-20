@@ -134,7 +134,11 @@
 					Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a>
 				</p>";
 			}
-
+			
+			
+			//Create Datetime on sucessful attempt.
+			$datetime = date("Y-m-d H:i:s");
+			
 			//Test Successful Connection
 			if(!$connection) {
 				echo "<p><br><br>Databse connection failure.</p>";
@@ -143,7 +147,8 @@
 				//Add Test Data to the Database;
 				$sql_table = "attempts";
 				$score = 0;
-				$query = "INSERT INTO `$sql_table`(`id`, `fname`, `lname`, `sid`, `q1`, `q2`, `q3`, `q4`, `q5`, `score`) VALUES ('PRIMARY','$fname','$lname','$sid','$q1','$q2','$q3','$q4','$q5','$score')";
+				$numOfAttempts = 0;
+				$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `numOfAttempts`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$numOfAttempts', '$score')";
 				$result = mysqli_query($connection, $query);
 				
 				//Test Result
