@@ -42,8 +42,34 @@
 		//Get Connectiong Settings
 		require_once("settings.php");
 			
+		//Button Functions
+		function List100() {
+			
+		}
+		function List50() {
+			
+		}
+		function DeleteBySID($id) {
+			
+		}
+		function ChangeScore($score) {
+			
+		}
+			
 		//Open Server Connection
 		$connection = @mysqli_connect($host, $user, $pwd, $sql_db);
+		
+		//Default query gets the whole table.
+		$query = "SELECT * FROM $sql_table";
+		
+	?>
+	
+		<button type="button">List 100% Scores</button>
+		<button type="button">List Scores more than 50%</button>
+		<button type="button">Delete</button>
+		<button type="button">Change Score</button>
+		
+	<?php
 		
 		//Test Connection
 		if(!$connection) {
@@ -51,9 +77,8 @@
 		}
 		else {
 			//Run Queries
-			$query = "SELECT * FROM $sql_table";
-			
 			$result = mysqli_query($connection, $query);
+			
 			//Test Result
 			if(!$result) {
 				echo "<p>Error in query.</p>";
@@ -78,7 +103,6 @@
 					echo "<td>", $row["datetime"], "</td>";
 					echo "</tr>";
 				}
-				
 				echo "</table>";
 			}
 		}
