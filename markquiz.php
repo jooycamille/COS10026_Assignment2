@@ -163,45 +163,53 @@ session_start();
 				}
 			}
 			
-			//Test Connection, then get name and sid from database table.
-			if(!$connection) {
-				echo "<p><br><br>Databse connection failure.</p>";
+			
+			if ($errMsg != "") {
+				echo "<p> $errMsg </p>";
+				
+				//Add retry button here.
 			}
 			else {
-				$count = 0;
-				$query = "SELECT * FROM $sql_table";
-				$result = mysqli_query($connection, $query);
-				//Compare Full Name and Student ID with table.
-				
-				echo "<p>First name is: $fname | Last name is: $lname | ID is: $sid</p>";
-				
-				while ($row = mysqli_fetch_assoc($result)) {
-					if ($row["fname"] == $fname && $row["lname"] == $lname && $row["sid"] == $sid) {
-						$count++;
-					}
-				}
-				if ($count > 2) {
-					echo "<p>Oh no! You've already done this test.</p>";
+				//Test Connection, then get name and sid from database table.
+				if(!$connection) {
+					echo "<p><br><br>Databse connection failure.</p>";
 				}
 				else {
-					//Create Datetime on sucessful attempt.
-					$datetime = date("Y-m-d H:i:s");
-					
-					//Add Test Data to the Database;
-					$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$score')";
+					$count = 0;
+					$query = "SELECT * FROM $sql_table";
 					$result = mysqli_query($connection, $query);
+					//Compare Full Name and Student ID with table.
 					
-					//Test Result
-					if(!$result) {
-						echo "<p>Error when adding data to table.</p>";
+					echo "<p>First name is: $fname | Last name is: $lname | ID is: $sid</p>";
+					
+					while ($row = mysqli_fetch_assoc($result)) {
+						if ($row["fname"] == $fname && $row["lname"] == $lname && $row["sid"] == $sid) {
+							$count++;
+						}
+					}
+					if ($count > 2) {
+						echo "<p>Oh no! You've already done this test.</p>";
 					}
 					else {
-						echo "<p>You did it!</p>";
+						//Create Datetime on sucessful attempt.
+						$datetime = date("Y-m-d H:i:s");
+						
+						//Add Test Data to the Database;
+						$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$score')";
+						$result = mysqli_query($connection, $query);
+						
+						//Test Result
+						if(!$result) {
+							echo "<p>Error when adding data to table.</p>";
+						}
+						else {
+							echo "<p>You did it!</p>";
+						}
+						
+						//Free Up 'result' Memory and Close Database Connections
+						//mysqli_free_result($result);
+						mysqli_close($connection);
 					}
-					
-					//Free Up 'result' Memory and Close Database Connections
-					//mysqli_free_result($result);
-					mysqli_close($connection);
 				}
 			}
 		?>
