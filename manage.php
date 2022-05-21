@@ -51,11 +51,9 @@
 		}
 		else {
 			//Run Queries
-			$sql_table = "attempts";
 			$query = "SELECT * FROM $sql_table";
 			
 			$result = mysqli_query($connection, $query);
-			
 			//Test Result
 			if(!$result) {
 				echo "<p>Error in query.</p>";
@@ -64,18 +62,20 @@
 				//Display table with data from the database.
 				echo "<table border = \"1\">";
 				echo "<tr>"
+					."<th> First Name </th>"
 					."<th> Last Name </th>"
 					."<th> Student ID </th>"
-					."<th> Attempts </th>"
 					."<th> Score </th>"
+					."<th> Date/Time of Test </th>"
 					."</tr>";
 				
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo "<tr>";
+					echo "<td>", $row["fname"], "</td>";
 					echo "<td>", $row["lname"], "</td>";
 					echo "<td>", $row["sid"], "</td>";
-					echo "<td>", $row["numOfAttempts"], "</td>";
 					echo "<td>", $row["score"], "</td>";
+					echo "<td>", $row["datetime"], "</td>";
 					echo "</tr>";
 				}
 				
