@@ -49,10 +49,11 @@ session_start();
 					$data = trim($data);
 					$data = stripslashes($data);
 					$data = htmlspecialchars($data);
-					return $data;}
+					return $data;
+			}
 			
-			//Sanitize Data
-			
+			//This is a hack to make our errors more visible.
+			echo "<br><br><br><br><br><br><br>";
 			
 			//Validate Input Data
 			$errMsg = "";
@@ -67,7 +68,7 @@ session_start();
 				$fname = $_POST["fname"];
 				$fname = sanitise_input($fname);
 				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space for first name.</p>";
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
 				}
 			}	
 			if (empty($_POST["lname"])){
@@ -77,7 +78,7 @@ session_start();
 				$lname = $_POST["lname"];
 				$lname = sanitise_input($lname);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space for last name.</p>";
+					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
 				}
 			}
 			
@@ -162,52 +163,46 @@ session_start();
 				}
 			}
 			
-			if($errMsg != "") {
-				echo"<p>$errMsg</p>";
-				$_SESSION['attempt'] += 1;
-				if($_SESSION['attempt'] >= 3){
-					//stop submitting = time() + (5*60);
-					echo"<p>stappp</p>";
-				}
-				echo $_SESSION['attempt'];
-			}
-			else {
-				echo "<p>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
-				echo "<p>$score</p>";
-				$_SESSION['attempt'] += 1;
-				if($_SESSION['attempt'] >= 3){
-					//stop submitting = time() + (5*60);
-					echo"<p>stappp</p>";
-				}
-				echo $_SESSION['attempt'];
-			}
-			
-			//Create Datetime on sucessful attempt.
-			$datetime = date("Y-m-d H:i:s");
-
-			//Test Successful Connection
+			//Test Connection, then get name and sid from database table.
 			if(!$connection) {
 				echo "<p><br><br>Databse connection failure.</p>";
 			}
 			else {
-				//Add Test Data to the Database;
-				$sql_table = "attempts";
-				//$numOfAttempts = 0;
-				
-				$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `numOfAttempts`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$numOfAttempts', '$score')";
+				$count = 0;
+				$query = "SELECT * FROM $sql_table";
 				$result = mysqli_query($connection, $query);
+				//Compare Full Name and Student ID with table.
 				
-				//Test Result
-				if(!$result) {
-					echo "<p>Error when adding data to table.</p>";
+				echo "<p>First name is: $fname | Last name is: $lname | ID is: $sid</p>";
+				
+				while ($row = mysqli_fetch_assoc($result)) {
+					if ($row["fname"] == $fname && $row["lname"] == $lname && $row["sid"] == $sid) {
+						$count++;
+					}
+				}
+				if ($count > 2) {
+					echo "<p>Oh no! You've already done this test.</p>";
 				}
 				else {
-					echo "<p>You did it!</p>";
+					//Create Datetime on sucessful attempt.
+					$datetime = date("Y-m-d H:i:s");
+					
+					//Add Test Data to the Database;
+					$query = "INSERT INTO `$sql_table`(`id`, `datetime`, `fname`, `lname`, `sid`, `score`) VALUES ('PRIMARY', '$datetime', '$fname','$lname','$sid', '$score')";
+					$result = mysqli_query($connection, $query);
+					
+					//Test Result
+					if(!$result) {
+						echo "<p>Error when adding data to table.</p>";
+					}
+					else {
+						echo "<p>You did it!</p>";
+					}
+					
+					//Free Up 'result' Memory and Close Database Connections
+					//mysqli_free_result($result);
+					mysqli_close($connection);
 				}
-				
-				//Free Up 'result' Memory and Close Database Connections
-				//mysqli_free_result($result);
-				mysqli_close($connection);
 			}
 		?>
 	</section>

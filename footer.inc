@@ -1,7 +1,7 @@
 <!-- ########## Footer ########## -->
       <footer>
             <article>
-                  <h3 id="footer_h3">Swinburne University of Technology &#169; | Assignment 1 </h3>
+                  <h3 id="footer_h3">Swinburne University of Technology &#169; | Assignment 2 </h3>
                   <ul id="contacts">
                         <li id="email_icon">&#9993;</li>
                         <li><a href="mailto:101934317@student.swin.edu.au"> Joy </a></li>
