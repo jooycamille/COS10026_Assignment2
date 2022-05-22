@@ -1,10 +1,10 @@
 <?php
     require_once("../settings.php");
-    $conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+    $connection = @mysqli_connect($host,$user,$pwd,$sql_db);
 
     $findstudent = htmlspecialchars($_POST["findstd"]);
 
-    if(!$conn)
+    if(!$connection)
     {
         echo "<p> Database connection failure. </p>";
     } else
@@ -13,7 +13,7 @@
 
         $query = " select * FROM $sql_table where sid='$findstudent' OR fname = '$findstudent'";
 
-        $result = mysqli_query($conn, $query);
+        $result = mysqli_query($connection, $query);
 
         if(!$result)
         {
@@ -26,6 +26,7 @@
             . "<th scope=\"col\">Name </th>\n"
             . "<th scope=\"col\">Student ID </th>\n"
 			. "<th scope=\"col\">Score </th>\n"
+			. "<th scope=\"col\">Number of Attempts </th>\n"
             . "</tr>\n";  
 
             while ($row = mysqli_fetch_assoc($result))
@@ -35,13 +36,14 @@
                 echo "<td>", $row["fname"], "</td>\n";
                 echo "<td>", $row["sid"], "</td>\n";
 				echo "<td>", $row["score"], "</td>\n";
+				echo "<td>", $row["numOfAttempts"], "</td>\n";
                 echo "</tr>\n";
             }
             echo "</table>\n";
 
             mysqli_free_result($result);
         }
-        mysqli_close($conn);
+        mysqli_close($connection);
     }
 
 ?>

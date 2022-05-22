@@ -176,16 +176,16 @@ session_start();
 				}
 				else {
 					$count = 0;
-					$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid";
+					$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid"; // the count counts the number of time the student id exist in the database; num creates a temporary column with the count number of the selected WHERE clause (in this stage student id)
 					$result = mysqli_query($connection, $query);
 
 					if (!$result) {
 						echo "<p>Something went wrong with finding the student data</p>";
 					}
 					else {
-						$numOfAttempts = mysqli_fetch_array($result);
-						$numOfAttempts = $numOfAttempts['num'];
-	                    $numOfAttempts += 1;
+						$numOfAttempts = mysqli_fetch_array($result); // gives the result set for the query
+						$numOfAttempts = $numOfAttempts['num']; // grabbing the temporary column which contains the number of times the selected student id exist
+	                    $numOfAttempts += 1; // increments, because when the user doesnt exist, the temp column 'num' is 0, and we need to store 1 for the 1st attempt
 					
 						if ($numOfAttempts > 2) { 
 							echo "<p>Oh no! You've already done this test.</p>";
