@@ -49,10 +49,11 @@ session_start();
 					$data = trim($data);
 					$data = stripslashes($data);
 					$data = htmlspecialchars($data);
-					return $data;}
+					return $data;
+			}
 			
-			//Sanitize Data
-			
+			//This is a hack to make our errors more visible.
+			echo "<br><br><br><br><br><br><br>";
 			
 			//Validate Input Data
 			$errMsg = "";
@@ -61,45 +62,45 @@ session_start();
 				$_SESSION['attempt'] = 0;
 			}
 			if (empty($_POST["fname"])){
-				$errMsg .= "<p>no first name</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter first name*</p>";
 			}
 			else {
 				$fname = $_POST["fname"];
 				$fname = sanitise_input($fname);
 				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space*</p>";
 				}
 			}	
 			if (empty($_POST["lname"])){
-				$errMsg .= "<p>no last name</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter last name*</p>";
 			}
 			else {
 				$lname = $_POST["lname"];
 				$lname = sanitise_input($lname);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space*</p>";
 				}
 			}
 			
 			if (empty($_POST["studentid"])){
-				$errMsg .= "<p>no student id</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter student id*</p>";
 			}
 			else {
 				$sid = $_POST["studentid"];
 				$sid = sanitise_input($sid);
 				if (!preg_match("/\d{7,10}/", $sid)){
-					$errMsg .= "<p>Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits*</p>";
 				}
 			}
 			
 			if (empty ($_POST["q1"])) {
-				$errMsg .= "<p>please answer q1</p>";	
+				$errMsg .= "<p style='color:red;'>*Please answer question 1*</p>";	
 			}
 			else{
 				$q1 = $_POST["q1"];
 				$q1 = sanitise_input($q1);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $q1)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 1</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space for question 1*</p>";
 				}
 				if ((strcasecmp($q1,'voice search')== 0)||(strcasecmp($q1,'voice recognition software') == 0)){
 					$score += 1;
@@ -110,14 +111,14 @@ session_start();
 				$q2 = $_POST["q2"];
 				$q2 = sanitise_input($q2);
 				if (!preg_match("/^[a-zA-Z]+$/", $q2)){
-					$errMsg .= "<p>The answer to question 2 is in the wrong format</p>";
+					$errMsg .= "<p style='color:red;'>*The answer to question 2 is in the wrong format*</p>";
 				}
 				if ($q2 == 'audrey'){
 					$score += 1;
 				}
 			}
 			else{
-				$errMsg .= "<p>please answer q2</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 2*</p>";
 			}
 			
 			if (isset ($_POST["q3"])) {
@@ -131,7 +132,7 @@ session_start();
 				}
 			}
 			else{
-				$errMsg .= "<p>please answer q3</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 3*</p>";
 			}
 			
 			if (isset ($_POST["q4"])) {
@@ -145,11 +146,11 @@ session_start();
 				}	
 			}
 			else{
-				$errMsg .= "<p>please answer q4</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 4*</p>";
 			}
 			
 			if (empty ($_POST["q5"])) {
-				$errMsg .= "<p>please answer q5</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 5*</p>";
 			}
 			else{
 				$q5 = $_POST["q5"];
@@ -162,47 +163,64 @@ session_start();
 				}
 			}
 			
-			if($errMsg != "") {
-				echo"<p>$errMsg</p>";
-				$_SESSION['attempt'] += 1;
-				if($_SESSION['attempt'] >= 3){
-					//stop submitting = time() + (5*60);
-					echo"<p>stappp</p>";
-				}
-				echo $_SESSION['attempt'];
-			}
-			else {
-				echo "<p>Congratulations! You have completed the quiz. <a href='quiz.php'>Retry</a></p>";
-				echo "<p>$score</p>";
-				$_SESSION['attempt'] += 1;
-				if($_SESSION['attempt'] >= 3){
-					//stop submitting = time() + (5*60);
-					echo"<p>stappp</p>";
-				}
-				echo $_SESSION['attempt'];
-			}
-
-			//Test Successful Connection
-			if(!$connection) {
-				echo "<p><br><br>Databse connection failure.</p>";
-			}
-			else {
-				//Add Test Data to the Database;
-				$sql_table = "attempts";
-				$query = "INSERT INTO `$sql_table`(`id`, `fname`, `lname`, `sid`, `q1`, `q2`, `q3`, `q4`, `q5`, `score`) VALUES ('PRIMARY','$fname','$lname','$sid','$q1','$q2','$q3','$q4','$q5','$score')";
-				$result = mysqli_query($connection, $query);
+			
+			if ($errMsg != "") {
+				echo "<p> $errMsg </p>";
 				
-				//Test Result
-				if(!$result) {
-					echo "<p>Error when adding data to table.</p>";
+				//Add retry button here.
+				echo "<a href='quiz.php'><button>Please Retry</button></a>";
+			}
+			else {
+				//Test Connection, then get name and sid from database table.
+				if(!$connection) {
+					echo "<p><br><br>Database connection failure.</p>";
 				}
 				else {
-					echo "<p>You did it!</p>";
+					$count = 0;
+					$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid"; // the count counts the number of time the student id exist in the database; num creates a temporary column with the count number of the selected WHERE clause (in this stage student id)
+					$result = mysqli_query($connection, $query);
+
+					if (!$result) {
+						echo "<p>Something went wrong with finding the student data</p>";
+					}
+					else {
+						$numOfAttempts = mysqli_fetch_array($result); // gives the result set for the query
+						$numOfAttempts = $numOfAttempts['num']; // grabbing the temporary column which contains the number of times the selected student id exist
+	                    $numOfAttempts += 1; // increments, because when the user doesnt exist, the temp column 'num' is 0, and we need to store 1 for the 1st attempt
+					
+						if ($numOfAttempts > 2) { 
+							echo "<p>Oh no! You've already done this test.</p>";
+						}
+						else {
+							$link = "";
+							if ($numOfAttempts == 1) {
+								$link = "<a href='quiz.php'>Try Again</a>";
+							}
+												
+		     				// echo $numOfAttempts;
+							//Create Datetime on sucessful attempt.
+							$datetime = date("Y-m-d H:i:s");
+							
+							//Add Test Data to the Database;
+							$insert_query = "insert INTO $sql_table(id, datetime, fname, lname, sid, score, numOfAttempts) VALUES ('PRIMARY', '$datetime', '$fname','$lname', $sid, $score, $numOfAttempts)";
+							$insert_result = mysqli_query($connection, $insert_query);
+							
+							//Test Result
+							if(!$insert_result) {
+								echo "<p>Error when adding data to table.</p>";
+							}
+							else {
+								echo "<p>First name is: $fname | Last name is: $lname | ID is: $sid</p>";
+								echo "<p>You did it!</br></p>";
+								echo $link;
+							}		
+						}
+						
+						mysqli_free_result($result);
+					}
+					
+					mysqli_close($connection);
 				}
-				
-				//Free Up 'result' Memory and Close Database Connections
-				//mysqli_free_result($result);
-				mysqli_close($connection);
 			}
 		?>
 	</section>
