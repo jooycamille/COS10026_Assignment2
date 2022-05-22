@@ -1,37 +1,32 @@
-<?php 
+<?php
 
     require_once("../settings.php");
-	$connection = @mysqli_connect($host,$user,$pwd,$sql_db);
+    $connection = @mysqli_connect($host, $user, $pwd, $sql_db);
 
-	//Test Connection
-	
-	if(!$connection) 
-	{
-		echo "<p>Error connecting to database.</p>";
-	}else
-    {
+    //Test Connection
+
+    if (!$connection) {
+        echo "<p>Error connecting to database.</p>";
+    } else {
         $sql_table = "attempts";
-        
+
         $query = "select * FROM $sql_table WHERE (score = 5) AND (numOfAttempts = 1)";
 
         $result = mysqli_query($connection, $query);
 
-        if(!$result)
-        {
+        if (!$result) {
             echo "<p> Something is wrong with ", $query, "</p>";
-        } else
-        {
+        } else {
             echo "<table border=\"1\">\n";
             echo "<tr>\n"
-            . "<th scope=\"col\">Date </th>\n"
-            . "<th scope=\"col\">Name </th>\n"
-            . "<th scope=\"col\">Student ID </th>\n"
-            . "<th scope=\"col\">Score </th>\n"
-            . "<th scope=\"col\">Number of Attempts </th>\n"
-            . "</tr>\n";  
+                . "<th scope=\"col\">Date </th>\n"
+                . "<th scope=\"col\">Name </th>\n"
+                . "<th scope=\"col\">Student ID </th>\n"
+                . "<th scope=\"col\">Score </th>\n"
+                . "<th scope=\"col\">Number of Attempts </th>\n"
+                . "</tr>\n";
 
-            while ($row = mysqli_fetch_assoc($result))
-            {
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>\n";
                 echo "<td>", $row["fname"], "</td>\n";
                 echo "<td>", $row["lname"], "</td>\n";
@@ -44,9 +39,9 @@
 
             mysqli_free_result($result);
         }
-
+        echo "<p><a href='../manage.php'>Go Back</a></p>";
         mysqli_close($connection);
-        
     }
 
 ?>
+    
