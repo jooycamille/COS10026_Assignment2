@@ -110,7 +110,7 @@
                         that could record sound and play it back. This decide was created on 4th December, 1877.
                   </p>
                   <figure>
-                        <img id="d_img" src="/images/history.jpg" alt="history development of voice technology">
+                        <img id="d_img" src="images/history.jpg" alt="history development of voice technology">
                         <figcaption>
                               History Development of Voice Technology <a href="#16">[16]</a>
                         </figcaption>
@@ -170,7 +170,7 @@
             <section id="growth">
                   <h2>Growth and Future</h2>
                   <figure class="growth_fig">
-                        <img id="g_img" src="/images/vt2.jpg" alt="Percentage on improvements and changes to the technology">
+                        <img id="g_img" src="images/vt2.jpg" alt="Percentage on improvements and changes to the technology">
                         <figcaption>Speechmatics Report Trends Predictions Voice Technology 2021 <a href="#14">[14]</a></figcaption>
                   </figure>
                   <p>
@@ -219,7 +219,7 @@
                         <a href="#19">[19]</a>
                   </p>
                   <figure class="r_fig">
-                        <img id="r_img" src="/images/vt.jpeg" alt="voice recognition as a biometric indentification of a person">
+                        <img id="r_img" src="images/vt.jpeg" alt="voice recognition as a biometric indentification of a person">
                         <figcaption>Voice Recognition as Biometric Identification of a Person<a href="#15">[15]</a></figcaption>
                   </figure>
             </section>

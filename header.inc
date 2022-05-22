@@ -22,7 +22,10 @@
 					<a href="enhancements.html" class="navbar__links">Enhancements</a>
 				</li>
 				<li class="navbar__item">
-					<a href="managetest.php" class="navbar__links">Manage</a>
+					<a href="manage.php" class="navbar__links">Manage</a>
+				</li>
+				<li class="navbar__item">
+					<a href="phpenhancements.php" class="navbar__links">PHP Enhancements</a>
 				</li>
 			</ul>
 	</div>

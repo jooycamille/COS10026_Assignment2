@@ -658,3 +658,14 @@ cite {
 .examples li a:active {
       background-color: yellow;
 }
+
+/* ########## Manage PHP ########## */
+#manage_body {
+      margin-top: 250px;
+      margin-bottom: 200px;
+      min-height: 20px;
+}
+
+.manage_container {
+      padding: auto;
+}
