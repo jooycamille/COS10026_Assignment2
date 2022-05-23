@@ -34,9 +34,9 @@ session_start();
 	<!-- References to external responsive CSS file -->
 	<link rel="stylesheet" href="styles/responsive.css" media="screen and (max-width: 1024px)">
 </head>
-<body>
+<body id="mark_body">
 	<?php include 'header.inc'; ?>
-	<section class = "errorbox">
+	<section class="mark_container">
 		<?php 
 			//Get Connectiong Settings
 			require_once("settings.php");
@@ -52,8 +52,7 @@ session_start();
 					return $data;
 			}
 			
-			//This is a hack to make our errors more visible.
-			echo "<br><br><br><br><br><br><br>";
+			// echo "<br><br><br><br><br><br><br>";
 			
 			//Validate Input Data
 			$errMsg = "";

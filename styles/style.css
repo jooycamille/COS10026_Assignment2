@@ -659,6 +659,12 @@ cite {
       background-color: yellow;
 }
 
+/* ########## Markquiz ########## */
+#mark_body {
+      margin-top: 250px;
+      margin-bottom: 200px;
+}
+
 /* ########## Manage PHP ########## */
 #manage_body {
       margin-top: 250px;
