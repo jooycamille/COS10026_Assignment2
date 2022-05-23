@@ -4,4 +4,5 @@
 	$pwd = "mysql";
 	$sql_db = "s101533031_db";
 	$sql_table = "attempts";
+	$sql_tbl = "users";
 ?>

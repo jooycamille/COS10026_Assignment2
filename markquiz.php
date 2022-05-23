@@ -62,45 +62,47 @@ session_start();
 				$_SESSION['attempt'] = 0;
 			}
 			if (empty($_POST["fname"])){
-				$errMsg .= "<p>no first name</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter first name*</p>";
 			}
 			else {
 				$fname = $_POST["fname"];
 				$fname = sanitise_input($fname);
 				if (!preg_match("/^[a-zA-Z- ]{0,30}$/", $fname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space*</p>";
 				}
 			}	
 			if (empty($_POST["lname"])){
-				$errMsg .= "<p>no last name</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter last name*</p>";
 			}
 			else {
 				$lname = $_POST["lname"];
 				$lname = sanitise_input($lname);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $lname)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space.</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space*</p>";
 				}
 			}
 			
 			if (empty($_POST["studentid"])){
-				$errMsg .= "<p>no student id</p>";
+				$errMsg .= "<p style='color:red;'>*Please enter student id*</p>";
+
 			}
 			else {
 				$sid = $_POST["studentid"];
 				$sid = sanitise_input($sid);
 				if (!preg_match("/\d{7,10}/", $sid)){
-					$errMsg .= "<p>Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only integers 0-9 with a minimum of 7 and a maximum of 10 digits*</p>";
 				}
 			}
 			
 			if (empty ($_POST["q1"])) {
-				$errMsg .= "<p>please answer q1</p>";	
+				$errMsg .= "<p style='color:red;'>*Please answer question 1*</p>";	
+
 			}
 			else{
 				$q1 = $_POST["q1"];
 				$q1 = sanitise_input($q1);
 				if (!preg_match("/^[a-zA-Z- ]+$/", $q1)){
-					$errMsg .= "<p>Please enter only alpha, hyphens, and space for question 1</p>";
+					$errMsg .= "<p style='color:red;'>*Please enter only alpha, hyphens, and space for question 1*</p>";
 				}
 				if ((strcasecmp($q1,'voice search')== 0)||(strcasecmp($q1,'voice recognition software') == 0)){
 					$score += 1;
@@ -111,14 +113,14 @@ session_start();
 				$q2 = $_POST["q2"];
 				$q2 = sanitise_input($q2);
 				if (!preg_match("/^[a-zA-Z]+$/", $q2)){
-					$errMsg .= "<p>The answer to question 2 is in the wrong format</p>";
+					$errMsg .= "<p style='color:red;'>*The answer to question 2 is in the wrong format*</p>";
 				}
 				if ($q2 == 'audrey'){
 					$score += 1;
 				}
 			}
 			else{
-				$errMsg .= "<p>please answer q2</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 2*</p>";
 			}
 			
 			if (isset ($_POST["q3"])) {
@@ -132,7 +134,7 @@ session_start();
 				}
 			}
 			else{
-				$errMsg .= "<p>please answer q3</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 3*</p>";
 			}
 			
 			if (isset ($_POST["q4"])) {
@@ -146,11 +148,11 @@ session_start();
 				}	
 			}
 			else{
-				$errMsg .= "<p>please answer q4</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 4*</p>";
 			}
 			
 			if (empty ($_POST["q5"])) {
-				$errMsg .= "<p>please answer q5</p>";
+				$errMsg .= "<p style='color:red;'>*Please answer question 5*</p>";
 			}
 			else{
 				$q5 = $_POST["q5"];
@@ -188,15 +190,14 @@ session_start();
 	                    $numOfAttempts += 1; // increments, because when the user doesnt exist, the temp column 'num' is 0, and we need to store 1 for the 1st attempt
 					
 						if ($numOfAttempts > 2) { 
-							echo "<p>Oh no! You've already done this test.</p>";
+							echo "<p>You have surpassed the allowed number of attempts. Highest Score will be accepted for grading.</p>";
 						}
 						else {
 							$link = "";
 							if ($numOfAttempts == 1) {
-								$link = "<a href='quiz.php'>Try Again</a>";
+								$link = "<a href='quiz.php'><button>Please Retry</button></a>";
 							}
-												
-		     				// echo $numOfAttempts;
+
 							//Create Datetime on sucessful attempt.
 							$datetime = date("Y-m-d H:i:s");
 							
@@ -209,8 +210,13 @@ session_start();
 								echo "<p>Error when adding data to table.</p>";
 							}
 							else {
-								echo "<p>First name is: $fname | Last name is: $lname | ID is: $sid</p>";
-								echo "<p>You did it!</br></p>";
+								echo "<p>
+								<strong>First name:</strong> $fname </br>
+								<strong>Last name:</strong> $lname </br>
+								<strong>ID:</strong> $sid </br>
+								<strong>Score:</strong> $score </br>
+								</p>";
+								echo "<p>Well done!</br></p>";
 								echo $link;
 							}		
 						}

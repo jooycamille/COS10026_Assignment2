@@ -19,16 +19,10 @@
         $ch_score_sid = htmlspecialchars($sid);
         $ch_score_att = htmlspecialchars($att);
 
-        $errMsg = "" ;
         //has to be numerical
         //student number has to be between 7-10 digits
         //attempt number can only either be 1 or 2
         //new score has to be a number between 0-5
-        if (is_numeric($score_change)) {
-            if (!($score_change >= 0 && $score_change <= 5)){
-                $errMsg .= "<p>You must enter a score between 0-5.</p>";
-            }
-        }
 
         $query = "update $sql_table SET score = $score_change WHERE (sid = $ch_score_sid) AND (numOfAttempts = $ch_score_att)";
 

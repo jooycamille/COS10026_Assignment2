@@ -666,6 +666,27 @@ cite {
       min-height: 20px;
 }
 
-.manage_container {
-      padding: auto;
+.logout_link {
+      padding: 16px 32px;
+      margin: 8px 2px;
+      background-color: rgb(186, 148, 196);
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 20px;
+}
+
+fieldset.manage_container {
+      margin-top: 500px;
+}
+
+/* ########## PHP Enhancement ########## */
+
+/* ########## Login ########## */
+#login_body {
+      margin-top: 250px;
+      margin-bottom: 200px;
 }
