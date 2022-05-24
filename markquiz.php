@@ -167,7 +167,7 @@ session_start();
 			
 			if ($errMsg != "") {
 				echo "<p> $errMsg </p>";
-				
+				echo "<a href='quiz.php'><button>Please Retry</button></a>";
 				//Add retry button here.
 			}
 			else {
