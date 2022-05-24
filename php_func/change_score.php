@@ -19,11 +19,6 @@
         $ch_score_sid = htmlspecialchars($sid);
         $ch_score_att = htmlspecialchars($att);
 
-        //has to be numerical
-        //student number has to be between 7-10 digits
-        //attempt number can only either be 1 or 2
-        //new score has to be a number between 0-5
-
         $query = "update $sql_table SET score = $score_change WHERE (sid = $ch_score_sid) AND (numOfAttempts = $ch_score_att)";
 
         $result = mysqli_query($connection, $query);
@@ -45,16 +40,17 @@
             else {
                 echo "<table border=\"1\">\n";
                 echo "<tr>\n"
-                . "<th scope=\"col\">Date </th>\n"
-                . "<th scope=\"col\">Name </th>\n"
-                . "<th scope=\"col\">Student ID </th>\n"
-                . "<th scope=\"col\">Score </th>\n"
-                . "<th scope=\"col\">Number of Attempts </th>\n"
+                . "<th scope=\"col\"> Date </th>\n"
+                . "<th scope=\"col\"> First Name </th>\n"
+                . "<th scope=\"col\"> Last Name </th>\n"
+                . "<th scope=\"col\"> Student ID </th>\n"
+                . "<th scope=\"col\"> Score </th>\n"
+                . "<th scope=\"col\"> Number of Attempts </th>\n"
                 . "</tr>\n";  
         
-                while ($row = mysqli_fetch_assoc($result2))
-                {
+                while ($row = mysqli_fetch_assoc($result2)) {
                     echo "<tr>\n";
+                    echo "<td>", $row["datetime"], "</td>\n";
                     echo "<td>", $row["fname"], "</td>\n";
                     echo "<td>", $row["lname"], "</td>\n";
                     echo "<td>", $row["sid"], "</td>\n";

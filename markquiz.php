@@ -201,7 +201,7 @@ session_start();
 							$datetime = date("Y-m-d H:i:s");
 							
 							//Add Test Data to the Database;
-							$insert_query = "insert INTO $sql_table(id, datetime, fname, lname, sid, score, numOfAttempts) VALUES ('PRIMARY', '$datetime', '$fname','$lname', $sid, $score, $numOfAttempts)";
+							$insert_query = "insert INTO $sql_table (id, datetime, fname, lname, sid, score, numOfAttempts) VALUES ('PRIMARY', '$datetime', '$fname','$lname', $sid, $score, $numOfAttempts)";
 							$insert_result = mysqli_query($connection, $insert_query);
 							
 							//Test Result
@@ -211,9 +211,14 @@ session_start();
 							else {
 								echo "<p>
 								<strong>First name:</strong> $fname </br>
+								<br>
 								<strong>Last name:</strong> $lname </br>
+								<br>
 								<strong>ID:</strong> $sid </br>
+								<br>
 								<strong>Score:</strong> $score </br>
+								<br>
+								<strong>Number of Attempt:</strong> $numOfAttempts </br>
 								</p>";
 								echo "<p>Well done!</br></p>";
 								echo $link;

@@ -19,21 +19,23 @@
         } else {
             echo "<table border=\"1\">\n";
             echo "<tr>\n"
-                . "<th scope=\"col\">Date </th>\n"
-                . "<th scope=\"col\">Name </th>\n"
-                . "<th scope=\"col\">Student ID </th>\n"
-                . "<th scope=\"col\">Score </th>\n"
-                . "<th scope=\"col\">Number of Attempts </th>\n"
-                . "</tr>\n";
-
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>\n";
-                echo "<td>", $row["fname"], "</td>\n";
-                echo "<td>", $row["lname"], "</td>\n";
-                echo "<td>", $row["sid"], "</td>\n";
-                echo "<td>", $row["score"], "</td>\n";
-                echo "<td>", $row["numOfAttempts"], "</td>\n";
-                echo "</tr>\n";
+                . "<th scope=\"col\"> Date </th>\n"
+                . "<th scope=\"col\"> First Name </th>\n"
+                . "<th scope=\"col\"> Last Name </th>\n"
+                . "<th scope=\"col\"> Student ID </th>\n"
+                . "<th scope=\"col\"> Score </th>\n"
+                . "<th scope=\"col\"> Number of Attempts </th>\n"
+                . "</tr>\n";  
+        
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>\n";
+                    echo "<td>", $row["datetime"], "</td>\n";
+                    echo "<td>", $row["fname"], "</td>\n";
+                    echo "<td>", $row["lname"], "</td>\n";
+                    echo "<td>", $row["sid"], "</td>\n";
+                    echo "<td>", $row["score"], "</td>\n";
+                    echo "<td>", $row["numOfAttempts"], "</td>\n";
+                    echo "</tr>\n";
             }
             echo "</table>\n";
 
@@ -42,5 +44,4 @@
         echo "<p><a href='../manage.php'>Go Back</a></p>";
         mysqli_close($connection);
     }
-
 ?>

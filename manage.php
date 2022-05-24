@@ -79,7 +79,7 @@ if ( isset($_SESSION['username'])) {
 
 			<form action="php_func/delete_for_student.php" method="post">
 				<fieldset>
-					<legend>Delete Attemp Record for Student</legend>
+					<legend>Delete Attempt Record for Student</legend>
 					<input type="text" name="del_atte" id="del_atte" placeholder="enter student id"> &nbsp;
 					<input type="submit" value="DELETE!">
 				</fieldset>
