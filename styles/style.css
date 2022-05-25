@@ -696,3 +696,46 @@ fieldset.manage_container {
       margin-top: 250px;
       margin-bottom: 200px;
 }
+
+/* ########## MANAGE PHP ########## */
+
+.manage_container input[type=text] 
+{
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 800;
+      color: rgb(110, 30, 121);
+      padding: 8px 12px;
+      margin: 8px 0px;
+      background-color: rgb(227, 190, 241);
+      border: none;
+      border-bottom: 2px solid rgb(171, 38, 175);
+      transition: 0.3s;
+}
+
+.manage_container input[type=text]:focus {
+      background-color: rgba(27, 4, 35, 0.1);
+}
+
+.manage_container #M_btn
+{
+      text-transform: uppercase;
+      padding: 16px 32px;
+      margin: 8px 2px;
+      background-color: rgb(186, 148, 196);
+      color: rgb(65, 50, 107);
+      font-weight: 800;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 20px;
+}
+
+.manage_container #M_btn:hover
+{
+      border: rgb(186, 148, 196);
+      background-color: rgb(62, 45, 66);
+      color: whitesmoke;
+      border-radius: 20px;
+}

@@ -45,29 +45,30 @@ if ( isset($_SESSION['username'])) {
 			<form action="display_all.php" method="post">
 				<fieldset>
 					<legend>Display STUDENT</legend>
-					<input type="submit" name="display" value="display attempts">
+					<input type="submit" name="display" value="display attempts" id="M_btn">
 				</fieldset>
 			</form>
 
 			<form action="search_student.php" method="post">
 				<fieldset>
 					<legend>Search Student</legend>
-					<input type="text" name="findstd" id="findstd" placeholder="enter student id or name"> &nbsp;
-					<input type="submit" value="Find!">
+					<input type="text" name="findstd" id="findstd" size ="30" placeholder="enter student id or name"> &nbsp;
+					<br>
+					<input type="submit" value="Find!" id="M_btn">
 				</fieldset>
 			</form>
 			
 			<form action="display_above.php" method="post">
 				<fieldset>
 					<legend>Display Students that Achieved 100% on their First Attempt</legend>
-					<input type="submit" name="display" value="display attempts">
+					<input type="submit" name="display" value="display attempts" id="M_btn">
 				</fieldset>
 			</form>
 
 			<form action="display_below.php" method="post">
 				<fieldset>
 					<legend>Display Students that Achieve Below 50% on Second Attempt</legend>
-					<input type="submit" name="display" value="display attempts">
+					<input type="submit" name="display" value="display attempts" id="M_btn">
 				</fieldset>
 			</form>
 
@@ -75,7 +76,8 @@ if ( isset($_SESSION['username'])) {
 				<fieldset>
 					<legend>Delete Attempt Record for Student</legend>
 					<input type="text" name="del_atte" id="del_atte" placeholder="enter student id"> &nbsp;
-					<input type="submit" value="DELETE!">
+					<br>
+					<input type="submit" value="DELETE!" id="M_btn">
 				</fieldset>
 			</form>
 
@@ -83,9 +85,12 @@ if ( isset($_SESSION['username'])) {
 				<fieldset>
 					<legend>Change Score</legend>
 					<input type="text" name="ch_score_sid" id="ch_score_sid" placeholder="enter student id">
+					<br>
 					<input type="text" name="ch_score_att" id="ch_score_att" placeholder="enter attempt number">
+					<br>
 					<input type="text" name="score_change" id="score_change" placeholder="enter new score">
-					<input type="submit" value="Change Score">
+					<br>
+					<input type="submit" value="Change Score" id="M_btn">
 				</fieldset>
 			</form>
 
