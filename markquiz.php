@@ -176,6 +176,29 @@ session_start();
 					echo "<p><br><br>Database connection failure.</p>";
 				}
 				else {
+					
+					//Create table if it doesn't already exist.
+					$query = "CREATE TABLE IF NOT EXISTS attempts(
+					id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+					datetime DATETIME NOT NULL,
+					fname VARCHAR(30) NOT NULL,
+					lname VARCHAR(30) NOT NULL,
+					sid INT NOT NULL,
+					score INT NOT NULL,
+					numOfAttempts INT NOT NULL,
+					)";
+					
+					$result = mysqli_query($connection, $query);
+					if(!$result)
+					{
+						echo "<p> Something is wrong with ", $query, "</p>";
+					}
+					else
+					{
+						echo "<p> Successfully created attempts table. </p>";
+					}
+				}
+					
 					$count = 0;
 					$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid"; // the count counts the number of time the student id exist in the database; num creates a temporary column with the count number of the selected WHERE clause (in this stage student id)
 					$result = mysqli_query($connection, $query);
@@ -203,6 +226,7 @@ session_start();
 							//Add Test Data to the Database;
 							$insert_query = "insert INTO $sql_table (id, datetime, fname, lname, sid, score, numOfAttempts) VALUES ('PRIMARY', '$datetime', '$fname','$lname', $sid, $score, $numOfAttempts)";
 							$insert_result = mysqli_query($connection, $insert_query);
+
 							
 							//Test Result
 							if(!$insert_result) {

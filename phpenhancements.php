@@ -45,8 +45,9 @@
 					Only the admin and allowed users who has a login info can access the page. If the user has logout from the page, they are not allowed to access the page anymore. It will just keep redirecting them to the login page (loginform.php) <br>
 					<br>
 					<em><strong>Login credentials:</strong></em> <br>
-					<strong>username: </strong> admin <br>
-					<strong>password: </strong> 1234 <br>
+					&nbsp; &nbsp;<strong>username: </strong> admin <br>
+					&nbsp; &nbsp;<strong>password: </strong> 1234 <br>
+					<br>
 					<img src="images/phpenhancement.png" alt="php enhancement code">
 				</p>
 				<cite>https://www.simplilearn.com/tutorials/php-tutorial/php-login-form</cite>
