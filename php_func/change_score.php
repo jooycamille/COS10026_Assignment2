@@ -61,8 +61,8 @@
                 echo "</table>\n";
                 echo "<p><a href='../manage.php'>Go Back</a></p>";
                 mysqli_free_result($result2);
-            }   
-        }     
+            }
+        } 
     }
     mysqli_close($connection);
 ?>
