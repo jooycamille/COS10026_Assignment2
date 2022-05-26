@@ -179,37 +179,33 @@ session_start();
 					
 					//Create table if it doesn't already exist.
 					$query = "CREATE TABLE IF NOT EXISTS attempts(
-					id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-					datetime DATETIME NOT NULL,
-					fname VARCHAR(30) NOT NULL,
-					lname VARCHAR(30) NOT NULL,
-					sid INT NOT NULL,
-					score INT NOT NULL,
-					numOfAttempts INT NOT NULL,
+					'id' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+					'datetime' DATETIME NOT NULL,
+					'fname' VARCHAR(30) NOT NULL,
+					'lname' VARCHAR(30) NOT NULL,
+					'sid' INT NOT NULL,
+					'score' INT NOT NULL,
+					'numOfAttempts' INT NOT NULL,
 					)";
 					
 					$result = mysqli_query($connection, $query);
-					if(!$result)
-					{
-						echo "<p> Something is wrong with ", $query, "</p>";
-					}
-					else
+					if($result)
 					{
 						echo "<p> Successfully created attempts table. </p>";
 					}
 				}
 					
-					$count = 0;
-					$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid"; // the count counts the number of time the student id exist in the database; num creates a temporary column with the count number of the selected WHERE clause (in this stage student id)
-					$result = mysqli_query($connection, $query);
+				$count = 0;
+				$query = "select COUNT(*) as num FROM $sql_table WHERE sid = $sid"; // the count counts the number of time the student id exist in the database; num creates a temporary column with the count number of the selected WHERE clause (in this stage student id)
+				$result = mysqli_query($connection, $query);
 
-					if (!$result) {
-						echo "<p>Something went wrong with finding the student data</p>";
-					}
-					else {
+				if (!$result) {
+					echo "<p>Something went wrong with finding the student data</p>";
+				}
+				else {
 						$numOfAttempts = mysqli_fetch_array($result); // gives the result set for the query
 						$numOfAttempts = $numOfAttempts['num']; // grabbing the temporary column which contains the number of times the selected student id exist
-	                    $numOfAttempts += 1; // increments, because when the user doesnt exist, the temp column 'num' is 0, and we need to store 1 for the 1st attempt
+						$numOfAttempts += 1; // increments, because when the user doesnt exist, the temp column 'num' is 0, and we need to store 1 for the 1st attempt
 					
 						if ($numOfAttempts > 2) { 
 							echo "<p>You have surpassed the allowed number of attempts. Highest Score will be accepted for grading.</p>";
@@ -248,13 +244,11 @@ session_start();
 								echo $link;
 							}		
 						}
-						
 						mysqli_free_result($result);
 					}
 					
 					mysqli_close($connection);
 				}
-			}
 		?>
 	</section>
 	
